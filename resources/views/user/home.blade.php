@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exlon Tech</title>
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon" />
+     <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}">
     <!-- CSS here -->
-    <link rel="stylesheet" href="./assets/css/animate.min.css" />
-    <link rel="stylesheet" href="./assets/css/font-awesome-pro.min.css" />
-    <link rel="stylesheet" href="./assets/css/flaticon_gerold.css" />
-    <link rel="stylesheet" href="./assets/css/nice-select.css" />
-    <link rel="stylesheet" href="./assets/css/backToTop.css" />
-    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="./assets/css/swiper.min.css" />
-    <link rel="stylesheet" href="./assets/css/odometer-theme-default.css" />
-    <link rel="stylesheet" href="./assets/css/magnific-popup.css" />
-    <link rel="stylesheet" href="./assets/css/nice-select.css" />
-    <link rel="stylesheet" href="./assets/css/backToTop.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome-pro.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/flaticon_gerold.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/backToTop.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/backToTop.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
     {{-- <script src="./assets/js/jquery.min.js"></script> --}}
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -108,7 +108,7 @@
                             </li>
                             <li class="nav_item group relative hidden lg:block">
                                 <a href="#portfolio"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Works
+                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Portfolio
                                 </a>
                             </li>
                             <!-- <li class="nav_item group relative hidden lg:block">
@@ -136,7 +136,7 @@
                             </li>
                             <!-- action button -->
                             <li>
-                                <a href="#"
+                                <a href="#contact"
                                     class="text-size-15 font-bold text-white-color capitalize py-17px px-35px ml-10px bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full leading-1 transition-all duration-300">Hire
                                     Us!</a>
                             </li>
@@ -168,7 +168,7 @@
                         </li>
                         <li>
                             <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#portfolio">
-                                Works
+                                Portfolio
                             </a>
                         </li>
                         <!-- <li>
@@ -233,7 +233,7 @@
                             </li>
                             <li class="nav_item group relative hidden lg:block">
                                 <a href="#portfolio"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Works
+                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Portfolio
                                 </a>
                             </li>
                             <!-- <li class="nav_item group relative hidden lg:block">
@@ -293,7 +293,7 @@
                         </li>
                         <li>
                             <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#portfolio">
-                                Works
+                                Portfolio
                             </a>
                         </li>
                         <!-- <li>
@@ -361,7 +361,7 @@
                         <div
                             class="flex items-center gap-30px lg:gap-25px mt-5 flex-wrap lg:flex-nowrap md:mt-30px lg:mt-50px">
                             <div>
-                                <a href="#"
+                                <a href="#contact"
                                     class="text-size-15 font-medium text-primary-color hover:text-body-color capitalize py-17px px-35px bg-200 bg-transparent hover:bg-primary-color rounded-full leading-1 border border-primary-color text-nowrap tracking-1px">Contact
                                     Us <i class="flaticon-phone-call ml-0.5 text-size-17"></i></a>
                             </div>
@@ -702,7 +702,7 @@
                                 <img src="./assets/img/portfolio/1.jpg" alt="" />
                                 <div
                                     class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
-                                    <a href="portfolio-details.html"
+                                    <a href="#"
                                         class="text-white-color p-15px pr-30px lg:p-5 lg:pr-50px bg-gradient-primary rounded-15px w-full">
                                         <span
                                             class="block text-xl md:text-size-25 lg:text-3xl font-bold mb-2 lg:mb-15px">
@@ -1539,24 +1539,24 @@
                     <!-- nav -->
                     <div>
                         <ul class="nav flex items-center gap-x-35px">
-                            <li class="nav_item group relative">
+                            {{-- <li class="nav_item group relative">
                                 <a href="about.html"
                                     class="text-size-15 font-medium text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">About
                                 </a>
-                            </li>
+                            </li> --}}
                             <li class="nav_item group relative">
-                                <a href="services.html"
+                                <a href="#services"
                                     class="text-size-15 font-medium text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Services
                                 </a>
                             </li>
                             <li class="nav_item group relative">
-                                <a href="portfolio.html"
+                                <a href="#portfolio"
                                     class="text-size-15 font-medium text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Portfolios
                                 </a>
                             </li>
 
                             <li class="nav_item group relative">
-                                <a href="contact.html"
+                                <a href="#contact"
                                     class="text-size-15 font-medium text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Contact
                                 </a>
                             </li>
@@ -1564,7 +1564,7 @@
                     </div>
                     <div class="copyright text-gray-color">
                         © 2024 All rights reserved by
-                        <a href="index.html" class="text-white-color hover:text-primary-color">ThemeJunction</a>
+                        <a href="index.html" class="text-white-color hover:text-primary-color">ExlonTech</a>
                     </div>
                 </div>
             </div>
@@ -1572,21 +1572,21 @@
     </footer>
     <!-- JSS here -->
 
-    <script src="./assets/js/gsap.min.js"></script>
-    <!-- <script src="./assets/js/gsap-scroll-to-plugin.min.js"></script>
-    <script src="./assets/js/gsap-scroll-trigger.min.js"></script>
-    <script src="./assets/js/gsap-split-text.min.js"></script> -->
-    <script src="./assets/js/appear.min.js"></script>
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/odometer.min.js"></script>
-    <script src="./assets/js/imagesloaded-pkgd.js"></script>
-    <script src="./assets/js/isotope.pkgd.min.js"></script>
-    <script src="./assets/js/owl.carousel.min.js"></script>
-    <script src="./assets/js/nice-select.min.js"></script>
-    <script src="./assets/js/backToTop.js"></script>
-    <script src="./assets/js/lenis.min.js"></script>
-    <script src="./assets/js/theme-controller.js"></script>
-    <script src="./assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
+    <!-- <script src="{{ asset('assets/js/gsap-scroll-to-plugin.min.js') }}"></script>
+    <script src="{{ asset('assets/js/gsap-scroll-trigger.min.js') }}"></script>
+    <script src="{{ asset('assets/js/gsap-split-text.min.js') }}"></script> -->
+    <script src="{{ asset('assets/js/appear.min.js') }}"></script>
+    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
+    <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
+    <script src="{{ asset('assets/js/imagesloaded-pkgd.js') }}"></script>
+    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('assets/js/nice-select.min.js') }}"></script>
+    <script src="{{ asset('assets/js/backToTop.js') }}"></script>
+    <script src="{{ asset('assets/js/lenis.min.js') }}"></script>
+    <script src="{{ asset('assets/js/theme-controller.js') }}"></script>
+    <script src="{{ asset('assets/js/main.js') }}"></script>
 </body>
 
 </html>
