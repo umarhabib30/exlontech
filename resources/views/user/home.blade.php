@@ -85,7 +85,7 @@
                     <div>
                         <ul class="flex items-center gap-x-15px xl:gap-x-35px">
                             <li>
-                                <a href="index.html" class="logo">
+                                <a href="{{route('home')}}" class="logo">
                                     <img class="hidden dark:inline-block" style="width: 160px;"
                                         src="./assets/img/logo/logo.png" alt="" />
                                     <img class="inlin-block dark:hidden" style="width: 160px;"
@@ -1484,9 +1484,9 @@
                                             <p class="text-primary-color-light dark:text-white-color mb-1">
                                                 Phone
                                             </p>
-                                            <a href="tel:0123456789"
+                                            <a href="tel:+92 309 6176606"
                                                 class="text-primary-color-light dark:text-white-color text-lg lg:text-xl font-medium hover:text-primary-color">
-                                                +92 316 7042828</a>
+                                                +92 309 6176606</a>
                                         </div>
                                     </li>
                                     <li class="flex flex-wrap items-center gap-25px position-relative wow fadeInRight"
