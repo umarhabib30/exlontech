@@ -1,331 +1,72 @@
-<!DOCTYPE html>
-<html lang="en" class="dark">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exlon Tech</title>
-    <!-- Place favicon.ico in the root directory -->
-     <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}">
-    <!-- CSS here -->
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome-pro.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/flaticon_gerold.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/backToTop.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/backToTop.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-    {{-- <script src="./assets/js/jquery.min.js"></script> --}}
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-</head>
+@section('title', $title ?? 'Exlon Tech')
 
-<body class="font-sora dark:bg-dark-color">
-    <!-- Preloader Area Start -->
-    <div class="preloader">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
+@push('styles')
+    <style>
+        .tech-skills-marquee {
+            overflow: hidden;
+            padding: 0.5rem 0;
+            -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+            mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+        }
 
-        <div class="preloader-heading">
-            <div class="load-text">
-                <span>L</span>
-                <span>o</span>
-                <span>a</span>
-                <span>d</span>
-                <span>i</span>
-                <span>n</span>
-                <span>g</span>
-            </div>
-        </div>
-    </div>
-    <!-- Preloader Area End -->
-    <!-- theme controller -->
-    <div class="fixed top-[200px] lg:top-[300px] transition-all duration-300 right-[-50px] hover:right-0 z-4xl">
-        <button
-            class="theme-controller w-90px h-10 bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-l-full text-whiteColor px-10px flex items-center transition-all duration-300 font-sora">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mr-10px w-5 block dark:hidden" viewBox="0 0 512 512">
-                <path
-                    d="M160 136c0-30.62 4.51-61.61 16-88C99.57 81.27 48 159.32 48 248c0 119.29 96.71 216 216 216 88.68 0 166.73-51.57 200-128-26.39 11.49-57.38 16-88 16-119.29 0-216-96.71-216-216z"
-                    fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                    stroke-width="32"></path>
-            </svg>
-            <span class="text-base block dark:hidden">Dark</span>
+        .tech-skills-marquee__track {
+            display: flex;
+            gap: 1.25rem;
+            width: max-content;
+            will-change: transform;
+            animation: tech-skills-marquee 55s linear infinite;
+            animation-play-state: running;
+        }
 
-            <svg xmlns="http://www.w3.org/2000/svg" class="hidden mr-10px w-5 dark:block" viewBox="0 0 512 512">
-                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
-                    stroke-width="32"
-                    d="M256 48v48M256 416v48M403.08 108.92l-33.94 33.94M142.86 369.14l-33.94 33.94M464 256h-48M96 256H48M403.08 403.08l-33.94-33.94M142.86 142.86l-33.94-33.94">
-                </path>
-                <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-linecap="round"
-                    stroke-miterlimit="10" stroke-width="32"></circle>
-            </svg>
-            <span class="text-base hidden dark:block">Light</span>
-        </button>
-    </div>
-    <!-- start: Back To Top -->
-    <div class="progress-wrap" id="scrollUp">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-        </svg>
-    </div>
-    <!-- header area  -->
-    <header class="header-area header-absolute">
-        <div class="pt-15px xl:pt-5 pb-5 md:pb-30px xl:pb-5 relative">
-            <div class="container">
-                <div class="flex flex-wrap justify-between items-center">
-                    <!-- logo and contact email -->
-                    <div>
-                        <ul class="flex items-center gap-x-15px xl:gap-x-35px">
-                            <li>
-                                <a href="{{route('home')}}" class="logo">
-                                    <img class="hidden dark:inline-block" style="width: 160px;"
-                                        src="./assets/img/logo/logo.png" alt="" />
-                                    <img class="inlin-block dark:hidden" style="width: 160px;"
-                                        src="./assets/img/logo/logo-dark.png" alt="" />
-                                </a>
-                            </li>
-                            <li class="hidden md:block">
-                                <a href="mailto:info@exlontech.com"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color">info@exlontech.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- main menu -->
-                    <nav>
-                        <ul class="nav flex items-center gap-x-5 xl:gap-x-30px 2xl:gap-x-45px">
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#services"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Services
-                                </a>
-                            </li>
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#portfolio"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Portfolio
-                                </a>
-                            </li>
-                            <!-- <li class="nav_item group relative hidden lg:block">
-                                <a
-                                    href="#resume"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full"
-                                    >Resume
-                                </a>
-                            </li> -->
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#skills"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Technologies
-                                </a>
-                            </li>
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#testimonials"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Testimonials
-                                </a>
-                            </li>
+        .tech-skills-marquee:hover .tech-skills-marquee__track {
+            animation-play-state: paused;
+        }
 
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#contact"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Contact
-                                </a>
-                            </li>
-                            <!-- action button -->
-                            <li>
-                                <a href="#contact"
-                                    class="text-size-15 font-bold text-white-color capitalize py-17px px-35px ml-10px bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full leading-1 transition-all duration-300">Hire
-                                    Us!</a>
-                            </li>
-                            <!-- open mobile menu button -->
-                            <li class="menu-bar lg:hidden">
-                                <div class="menu-bar">
-                                    <button>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </button>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <!-- mobile menu -->
-            <!-- scale-y-0 transition-all duration-500 hover:scale-y-100 -->
-            <div
-                class="mobile-menu absolute left-0 top-full min-h-screen-90 w-full bg-seondary-color block origin-top-left lg:hidden">
-                <div class="container py-5">
-                    <ul class="ml-4">
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#services">
-                                Services
-                            </a>
-                        </li>
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#portfolio">
-                                Portfolio
-                            </a>
-                        </li>
-                        <!-- <li>
-                            <a
-                            class="text-size-25 text-white-color uppercase leading-1.2 py-15px"
-                            href="#resume"
-                            >
-                            Resume
-                            </a>
-                        </li> -->
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#skills">
-                                Technologies
-                            </a>
-                        </li>
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px"
-                                href="#testimonials">
-                                Testimonials
-                            </a>
-                        </li>
+        @keyframes tech-skills-marquee {
+            from {
+                transform: translateX(0);
+            }
 
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#contact">
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- sticky -->
-    <header class="header-area header-2 header-sticky">
-        <div class="py-10px relative">
-            <div class="container">
-                <div class="flex flex-wrap justify-between items-center">
-                    <!-- logo and contact email -->
-                    <div>
-                        <ul class="flex items-center gap-x-15px xl:gap-x-35px">
-                            <li>
-                                <a href="index.html" class="logo">
-                                    <img class=" hidden dark:inline-block" style="width: 160px;"
-                                        src="./assets/img/logo/logo.png" alt="" />
-                                    <img class=" inlin-block dark:hidden" style="width: 160px;"
-                                        src="./assets/img/logo/logo-dark.png" alt="" />
-                                </a>
-                            </li>
-                            <li class="hidden md:block">
-                                <a href="mailto:info@exlontech.com"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color">info@exlontech.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- main menu -->
-                    <nav>
-                        <ul class="nav flex items-center gap-x-5 xl:gap-x-30px 2xl:gap-x-45px">
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#services"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Services
-                                </a>
-                            </li>
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#portfolio"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Portfolio
-                                </a>
-                            </li>
-                            <!-- <li class="nav_item group relative hidden lg:block">
-                                <a
-                                    href="#resume"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full"
-                                    >Resume
-                                </a>
-                            </li> -->
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#skills"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Technologies
-                                </a>
-                            </li>
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#testimonials"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Testimonials
-                                </a>
-                            </li>
+            to {
+                transform: translateX(-50%);
+            }
+        }
 
-                            <li class="nav_item group relative hidden lg:block">
-                                <a href="#contact"
-                                    class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Contact
-                                </a>
-                            </li>
-                            <!-- action button -->
-                            <li>
-                                <a href="#"
-                                    class="text-size-15 font-bold text-white-color capitalize py-17px px-35px ml-10px bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full leading-1 transition-all duration-300">Hire
-                                    Us!</a>
-                            </li>
-                            <!-- open mobile menu button -->
-                            <li class="menu-bar lg:hidden">
-                                <div class="menu-bar">
-                                    <button>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </button>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <!-- mobile menu -->
-            <!-- scale-y-0 transition-all duration-500 hover:scale-y-100 -->
-            <div
-                class="mobile-menu absolute left-0 top-full min-h-screen-90 w-full bg-seondary-color block origin-top-left lg:hidden">
-                <div class="container py-5">
-                    <ul class="ml-4">
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#services">
-                                Services
-                            </a>
-                        </li>
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#portfolio">
-                                Portfolio
-                            </a>
-                        </li>
-                        <!-- <li>
-                            <a
-                            class="text-size-25 text-white-color uppercase leading-1.2 py-15px"
-                            href="#resume"
-                            >
-                            Resume
-                            </a>
-                        </li> -->
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#skills">
-                                Technologies
-                            </a>
-                        </li>
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px"
-                                href="#testimonials">
-                                Testimonials
-                            </a>
-                        </li>
+        .tech-skills-marquee__item {
+            flex-shrink: 0;
+            width: 180px;
+        }
 
-                        <li>
-                            <a class="text-size-25 text-white-color uppercase leading-1.2 py-15px" href="#contact">
-                                Contact
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </header>
+        .tech-skills-marquee__card {
+            min-height: 148px;
+        }
+
+        .tech-skills-marquee__icon-wrap {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .tech-skills-marquee__icon-wrap img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+
+        .tech-skills-marquee__icon-wrap i {
+            font-size: 2.75rem;
+            line-height: 1;
+            display: block;
+        }
+    </style>
+@endpush
+
+@section('content')
     <div class="main-wrapper">
         <!-- hero banner  -->
         <section
@@ -460,7 +201,7 @@
                     <div class="services-widget relative">
                         <div class="service-item current px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
                             data-wow-delay=".5s">
-                            <a href="#"
+                            <a href="{{ route('web-development') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
@@ -481,7 +222,7 @@
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
                             data-wow-delay=".6s">
-                            <a href="#"
+                            <a href="{{ route('mobile-app-development') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
@@ -502,7 +243,7 @@
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
                             data-wow-delay=".7s">
-                            <a href="#"
+                            <a href="{{ route('ux-ui-design') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
@@ -522,7 +263,7 @@
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
                             data-wow-delay=".8s">
-                            <a href="#"
+                            <a href="{{ route('digital-marketing') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
@@ -543,7 +284,7 @@
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
                             data-wow-delay=".8s">
-                            <a href="#"
+                            <a href="{{ route('graphic-designing') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
@@ -564,7 +305,7 @@
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
                             data-wow-delay=".8s">
-                            <a href="#"
+                            <a href="{{ route('video-editing') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
@@ -595,129 +336,101 @@
             <div class="pt-60px pb-30px md:pt-20 md:pb-60px lg:pt-100px lg:pb-20">
                 <div class="container">
                     <!-- section heading -->
+
                     <div class="text-center flex flex-col items-center mb-10 md:mb-50px">
                         <h2 class="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 bg-gradient-text-light dark:bg-gradient-text bg-clip-text xl:leading-1.2 text-transparent mb-15px wow fadeInUp"
                             data-wow-delay=".3s">
-                            Our Recent Works
+                            Our Products
                         </h2>
                         <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp"
                             data-wow-delay=".4s">
-                            We take pride in our work and are committed to delivering high-quality solutions that meet
-                            your needs. Our
-                            portfolio showcases a selection of our recent projects, demonstrating our expertise and
-                            creativity in web
-                            development, mobile app development, UX/UI design, digital marketing, graphic design, and
-                            video editing.
+                            We take pride in offering high-quality products designed to meet your needs. Our recent products
+                            showcase our commitment to innovation, reliability, and user-focused solutions across different
+                            categories.
                         </p>
                     </div>
-                    <!-- portfolio -->
-                    <div class="portfolio-filter">
-                        <!-- controllers -->
-                        <div class="button-group filter-button-group max-w-400 mx-auto flex items-center justify-center bg-cream-light-color dark:bg-black rounded-full px-2 py-0 md:py-1.5 relative z-0 wow fadeInUp"
-                            data-wow-delay=".5s">
-                            <button data-filter="*"
-                                class="text-size-15 px-1.5 md:px-25px py-10px md:py-3 text-primary-color dark:text-white-color leading-1 active">
-                                All
-                            </button>
-                            <button data-filter=".uxui"
-                                class="text-size-15 px-1.5 md:px-25px py-10px md:py-3 text-primary-color dark:text-white-color leading-1">
-                                UX/UI
-                            </button>
-                            <button data-filter=".branding"
-                                class="text-size-15 px-1.5 md:px-25px py-10px md:py-3 text-primary-color dark:text-white-color leading-1">
-                                Branding
-                            </button>
-                            <button data-filter=".mobile-app"
-                                class="text-size-15 px-1.5 md:px-25px py-10px md:py-3 text-primary-color dark:text-white-color leading-1">
-                                Apps
-                            </button>
-                            <div class="active-bg !-z-1"></div>
-                        </div>
-                        <!-- contents -->
-                        <div class="portfolio-box wow fadeInUp mt-10 md:mt-50px wow fadeInUp" data-wow-delay=".6s">
-                            <div class="portfolio-sizer"></div>
-                            <div class="gutter-sizer"></div>
-                            <div
-                                class="portfolio-item branding bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                <img src="./assets/img/portfolio/p1.png" alt="" />
-                                <div
-                                    class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
-                                    <a href="https://restorepartnerpro.com/" target="_blank"
-                                        class="text-white-color p-15px pr-30px lg:p-5 lg:pr-50px bg-gradient-primary rounded-15px w-full">
-                                        <span
-                                            class="block text-xl md:text-size-25 lg:text-3xl font-bold mb-2 lg:mb-15px">
-                                            Restore Partner Pro
-                                        </span>
 
-                                        <span class="block text-body-color">
-                                            Market Place for restoration companpies and plumbers.
-                                        </span>
-                                        <i
-                                            class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] rotate-[-360deg] group-hover:rotate-0 transition-all duration-300"></i>
-                                    </a>
+
+                    <!-- Products preview -->
+                    <div class="text-center mb-10">
+                        <div class="portfolio-filter">
+                            <div class="portfolio-box wow fadeInUp mt-10 md:mt-50px wow fadeInUp" data-wow-delay=".6s">
+                                <div class="portfolio-sizer"></div>
+                                <div class="gutter-sizer"></div>
+
+                                <div
+                                    class="portfolio-item branding bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
+                                    <img src="{{ asset('assets/img/portfolio_images/p5.png') }}"
+                                        alt="Restore Partner Pro" />
+                                    <div
+                                        class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
+                                        <a href="https://tajmehal.exlontech.com/" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="text-white-color p-15px pr-30px lg:p-5 lg:pr-50px bg-gradient-primary rounded-15px w-full">
+                                            <span
+                                                class="block text-xl md:text-size-25 lg:text-3xl font-bold mb-2 lg:mb-15px">
+                                                Booking Management System
+                                            </span>
+                                            <span class="block text-body-color">
+                                                Booking Management System for hotels and restaurants.
+                                            </span>
+                                            <i
+                                                class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] rotate-[-360deg] group-hover:rotate-0 transition-all duration-300"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="portfolio-item uxui bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                <img src="./assets/img/portfolio/p2.png" alt="" />
-                                <div
-                                    class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
-                                    <a href="https://thesofahub.com/" target="_blank"
-                                        class="text-white-color p-15px pr-30px lg:p-5 lg:pr-50px bg-gradient-primary rounded-15px w-full">
-                                        <span
-                                            class="block text-xl md:text-size-25 lg:text-3xl font-bold mb-2 lg:mb-15px">
-                                            The Sofa Hub
-                                        </span>
 
-                                        <span class="block text-body-color">
-                                            Ecommerce website for sofa and furniture.
-                                        </span>
-                                        <i
-                                            class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] rotate-[-360deg] group-hover:rotate-0 transition-all duration-300"></i>
-                                    </a>
+                                <div
+                                    class="portfolio-item uxui bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
+                                    <img src="{{ asset('assets/img/portfolio_images/p6.png') }}"
+                                        alt="Global Mind Consultants" />
+                                    <div
+                                        class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
+                                        <a href="https://distribution.exlontech.com/" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="text-white-color p-15px pr-30px lg:p-5 lg:pr-50px bg-gradient-primary rounded-15px w-full">
+                                            <span
+                                                class="block text-xl md:text-size-25 lg:text-3xl font-bold mb-2 lg:mb-15px">
+                                               Stock Management System
+                                            </span>
+                                            <span class="block text-body-color">
+                                                Distribution inventory and sales management system.
+                                            </span>
+                                            <i
+                                                class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] rotate-[-360deg] group-hover:rotate-0 transition-all duration-300"></i>
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                            <div
-                                class="portfolio-item mobile-app bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                <img src="./assets/img/portfolio/p3.png" alt="" />
                                 <div
-                                    class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
-                                    <a href="https://dawatequran12.com/" target="_blank"
-                                        class="text-white-color p-15px pr-30px lg:p-5 lg:pr-50px bg-gradient-primary rounded-15px w-full">
-                                        <span
-                                            class="block text-xl md:text-size-25 lg:text-3xl font-bold mb-2 lg:mb-15px">
-                                            Dawate Quran
-                                        </span>
-
-                                        <span class="block text-body-color">
-                                            Quran learning app for kids and adults.
-                                        </span>
-                                        <i
-                                            class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] rotate-[-360deg] group-hover:rotate-0 transition-all duration-300"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div
-                                class="portfolio-item branding bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                <img src="./assets/img/portfolio/1.jpg" alt="" />
-                                <div
-                                    class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
-                                    <a href="#"
-                                        class="text-white-color p-15px pr-30px lg:p-5 lg:pr-50px bg-gradient-primary rounded-15px w-full">
-                                        <span
-                                            class="block text-xl md:text-size-25 lg:text-3xl font-bold mb-2 lg:mb-15px">
-                                            Mochnix
-                                        </span>
-
-                                        <span class="block text-body-color">
-                                            Project was about precision and information.
-                                        </span>
-                                        <i
-                                            class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] rotate-[-360deg] group-hover:rotate-0 transition-all duration-300"></i>
-                                    </a>
+                                    class="portfolio-item uxui bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
+                                    <img src="{{ asset('assets/img/portfolio_images/p8.png') }}"
+                                        alt="Chatbot Assistant" />
+                                    <div
+                                        class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
+                                        <a href="https://chatbot.exlontech.com/" target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="text-white-color p-15px pr-30px lg:p-5 lg:pr-50px bg-gradient-primary rounded-15px w-full">
+                                            <span
+                                                class="block text-xl md:text-size-25 lg:text-3xl font-bold mb-2 lg:mb-15px">
+                                               Whatsapp Chatbot Assistant
+                                            </span>
+                                            <span class="block text-body-color">
+                                                Whatsapp Chatbot Assistant for businesses.
+                                            </span>
+                                            <i
+                                                class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] rotate-[-360deg] group-hover:rotate-0 transition-all duration-300"></i>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <a href="{{ route('portfolio') }}"
+                            class="inline-flex items-center gap-2 mt-10 md:mt-50px text-size-15 font-bold text-white-color capitalize py-17px px-35px bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full leading-1 transition-all duration-300 wow fadeInUp"
+                            data-wow-delay=".7s">
+                            View Full Portfolio
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -744,110 +457,58 @@
                             in the ever-evolving digital landscape.
                         </p>
                     </div>
-                    <!-- skills -->
+                    <!-- skills slider -->
+                    @php
+                        $technologies = [
+                            ['name' => 'Figma', 'image' => 'assets/img/services/figma1.png'],
+                            ['name' => 'Laravel', 'image' => 'assets/img/services/laravel.png'],
+                            ['name' => 'Adobe XD', 'image' => 'assets/img/services/adobe.png'],
+                            ['name' => 'WordPress', 'image' => 'assets/img/services/wordpress.png'],
+                            ['name' => 'React', 'image' => 'assets/img/services/reactjs.png'],
+                            ['name' => 'JavaScript', 'image' => 'assets/img/services/js.png'],
+                            ['name' => 'Python', 'icon' => 'fa-brands fa-python', 'icon_color' => '#3776ab'],
+                            ['name' => 'AI', 'icon' => 'fa-solid fa-brain', 'icon_color' => '#b57dff'],
+                            ['name' => 'Node.js', 'image' => 'assets/img/services/Node.png'],
+                            ['name' => 'TypeScript', 'image' => 'assets/img/services/typescript.png'],
+                            ['name' => 'PHP', 'image' => 'assets/img/services/php 1.png'],
+                            ['name' => 'Flutter', 'image' => 'assets/img/services/fluter.png'],
+                            ['name' => 'Vue.js', 'image' => 'assets/img/services/vue.png'],
+                            ['name' => 'Next.js', 'image' => 'assets/img/services/nextjs.png'],
+                            ['name' => 'MongoDB', 'image' => 'assets/img/services/mongoDb.png'],
+                            ['name' => 'MySQL', 'image' => 'assets/img/services/mysql.png'],
+                            ['name' => 'Firebase', 'image' => 'assets/img/services/firebase.png'],
+                            ['name' => 'GraphQL', 'image' => 'assets/img/services/graphql.png'],
+                            ['name' => 'Shopify', 'image' => 'assets/img/services/shopifyy.png'],
+                            ['name' => 'Android', 'image' => 'assets/img/services/android.png'],
+                            ['name' => 'Photoshop', 'image' => 'assets/img/services/ps.png'],
+                            ['name' => 'Illustrator', 'image' => 'assets/img/services/ai.png'],
+                        ];
+                    @endphp
+
                     <div class="skills">
-                        <div class="flex flex-wrap items-center justify-center gap-5">
-                            <!-- skills single -->
-                            <div class="max-w-180px w-full group wow fadeInUp" data-wow-delay=".3s">
-                                <!-- contents -->
-                                <div
-                                    class="flex flex-col items-center py-25px px-15px md:pt-30px 2xl:pt-10 2xl:mb-30px rounded-25px bg-cream-light-color dark:bg-primary-color-light border border-transparent group-hover:border-primary-color group-hover:bg-seondary-color transition-all duration-500 mb-15px">
-                                    <div
-                                        class="mb-5 md:mb-30px mx-9 2xl:mx-44px w-60px flex flex-col justify-center items-center">
-                                        <img class="grayscale-[90%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-50 group-hover:opacity-100 w-60px"
-                                            src="./assets/img/icons/figma.png" alt="" />
-                                    </div>
-                                    <div
-                                        class="text-xl text-gray-color-2 group-hover:text-primary-color transition-none duration-300 font-extrabold">
-
-                                    </div>
-                                </div>
-                                <p class="text-primary-color text-center">Figma</p>
-                            </div>
-                            <!-- skills single -->
-                            <div class="max-w-180px w-full group wow fadeInUp" data-wow-delay=".4s">
-                                <!-- contents -->
-                                <div
-                                    class="flex flex-col items-center py-25px px-15px md:pt-30px 2xl:pt-10 2xl:mb-30px rounded-25px bg-cream-light-color dark:bg-primary-color-light border border-transparent group-hover:border-primary-color group-hover:bg-seondary-color transition-all duration-500 mb-15px">
-                                    <div
-                                        class="mb-5 md:mb-30px mx-9 2xl:mx-44px w-60px flex flex-col justify-center items-center">
-                                        <img class="grayscale-[90%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-50 group-hover:opacity-100 w-60px"
-                                            src="./assets/img/icons/laravel_logo.png" alt="" />
-                                    </div>
-                                    <div
-                                        class="text-xl text-gray-color-2 group-hover:text-primary-color transition-none duration-300 font-extrabold">
-
-                                    </div>
-                                </div>
-                                <p class="text-primary-color text-center">Laravel</p>
-                            </div>
-                            <!-- skills single -->
-                            <div class="max-w-180px w-full group wow fadeInUp" data-wow-delay=".5s">
-                                <!-- contents -->
-                                <div
-                                    class="flex flex-col items-center py-25px px-15px md:pt-30px 2xl:pt-10 2xl:mb-30px rounded-25px bg-cream-light-color dark:bg-primary-color-light border border-transparent group-hover:border-primary-color group-hover:bg-seondary-color transition-all duration-500 mb-15px">
-                                    <div
-                                        class="mb-5 md:mb-30px mx-9 2xl:mx-44px w-60px flex flex-col justify-center items-center">
-                                        <img class="grayscale-[90%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-50 group-hover:opacity-100 w-60px"
-                                            src="./assets/img/icons/xd.png" alt="" />
-                                    </div>
-                                    <div
-                                        class="text-xl text-gray-color-2 group-hover:text-primary-color transition-none duration-300 font-extrabold">
-
-                                    </div>
-                                </div>
-                                <p class="text-primary-color text-center">XD</p>
-                            </div>
-                            <!-- skills single -->
-                            <div class="max-w-180px w-full group wow fadeInUp" data-wow-delay=".6s">
-                                <!-- contents -->
-                                <div
-                                    class="flex flex-col items-center py-25px px-15px md:pt-30px 2xl:pt-10 2xl:mb-30px rounded-25px bg-cream-light-color dark:bg-primary-color-light border border-transparent group-hover:border-primary-color group-hover:bg-seondary-color transition-all duration-500 mb-15px">
-                                    <div
-                                        class="mb-5 md:mb-30px mx-9 2xl:mx-44px w-60px flex flex-col justify-center items-center">
-                                        <img class="grayscale-[90%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-50 group-hover:opacity-100 w-60px"
-                                            src="./assets/img/icons/wp.png" alt="" />
-                                    </div>
-                                    <div
-                                        class="text-xl text-gray-color-2 group-hover:text-primary-color transition-none duration-300 font-extrabold">
-
-                                    </div>
-                                </div>
-                                <p class="text-primary-color text-center">WordPress</p>
-                            </div>
-                            <!-- skills single -->
-                            <div class="max-w-180px w-full group wow fadeInUp" data-wow-delay=".7s">
-                                <!-- contents -->
-                                <div
-                                    class="flex flex-col items-center py-25px px-15px md:pt-30px 2xl:pt-10 2xl:mb-30px rounded-25px bg-cream-light-color dark:bg-primary-color-light border border-transparent group-hover:border-primary-color group-hover:bg-seondary-color transition-all duration-500 mb-15px">
-                                    <div
-                                        class="mb-5 md:mb-30px mx-9 2xl:mx-44px w-60px flex flex-col justify-center items-center">
-                                        <img class="grayscale-[90%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-50 group-hover:opacity-100 w-60px"
-                                            src="./assets/img/icons/react.png" alt="" />
-                                    </div>
-                                    <div
-                                        class="text-xl text-gray-color-2 group-hover:text-primary-color transition-none duration-300 font-extrabold">
-
-                                    </div>
-                                </div>
-                                <p class="text-primary-color text-center">React</p>
-                            </div>
-                            <!-- skills single -->
-                            <div class="max-w-180px w-full group wow fadeInUp" data-wow-delay=".8s">
-                                <!-- contents -->
-                                <div
-                                    class="flex flex-col items-center py-25px px-15px md:pt-30px 2xl:pt-10 2xl:mb-30px rounded-25px bg-cream-light-color dark:bg-primary-color-light border border-transparent group-hover:border-primary-color group-hover:bg-seondary-color transition-all duration-500 mb-15px">
-                                    <div
-                                        class="mb-5 md:mb-30px mx-9 2xl:mx-44px w-60px flex flex-col justify-center items-center">
-                                        <img class="grayscale-[90%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-50 group-hover:opacity-100 w-60px"
-                                            src="./assets/img/icons/js.png" alt="" />
-                                    </div>
-                                    <div
-                                        class="text-xl text-gray-color-2 group-hover:text-primary-color transition-none duration-300 font-extrabold">
-
-                                    </div>
-                                </div>
-                                <p class="text-primary-color text-center">JavaScript</p>
+                        <div class="tech-skills-marquee">
+                            <div class="tech-skills-marquee__track">
+                                @for ($copy = 0; $copy < 2; $copy++)
+                                    @foreach ($technologies as $tech)
+                                        <div class="tech-skills-marquee__item group">
+                                            <div
+                                                class="tech-skills-marquee__card flex flex-col items-center py-25px px-15px md:pt-30px 2xl:pt-10 2xl:mb-30px rounded-25px bg-cream-light-color dark:bg-primary-color-light border border-transparent group-hover:border-primary-color group-hover:bg-seondary-color transition-all duration-500 mb-15px">
+                                                <div
+                                                    class="mb-5 md:mb-30px mx-9 2xl:mx-44px tech-skills-marquee__icon-wrap">
+                                                    @if (!empty($tech['image']))
+                                                        <img class="grayscale-[90%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-50 group-hover:opacity-100"
+                                                            src="{{ asset($tech['image']) }}"
+                                                            alt="{{ $tech['name'] }}" />
+                                                    @else
+                                                        <i class="{{ $tech['icon'] }} grayscale-[90%] group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 opacity-50 group-hover:opacity-100"
+                                                            style="color: {{ $tech['icon_color'] }}"></i>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                            <p class="text-primary-color text-center">{{ $tech['name'] }}</p>
+                                        </div>
+                                    @endforeach
+                                @endfor
                             </div>
                         </div>
                     </div>
@@ -898,8 +559,7 @@
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
                                         <div class="icon-box mb-25px flex gap-1">
                                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                class="transition-all duration-300">
+                                                xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300">
                                                 <path
                                                     d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
                                                     fill="url(#paint6_linear_263_514)" class="fill-primary-color">
@@ -960,8 +620,7 @@
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
                                         <div class="icon-box mb-25px flex gap-1">
                                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                class="transition-all duration-300">
+                                                xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300">
                                                 <path
                                                     d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
                                                     fill="url(#paint6_linear_263_514)" class="fill-primary-color">
@@ -1023,8 +682,7 @@
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
                                         <div class="icon-box mb-25px flex gap-1">
                                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                class="transition-all duration-300">
+                                                xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300">
                                                 <path
                                                     d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
                                                     fill="url(#paint6_linear_263_514)" class="fill-primary-color">
@@ -1086,8 +744,7 @@
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
                                         <div class="icon-box mb-25px flex gap-1">
                                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                class="transition-all duration-300">
+                                                xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300">
                                                 <path
                                                     d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
                                                     fill="url(#paint6_linear_263_514)" class="fill-primary-color">
@@ -1148,8 +805,7 @@
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
                                         <div class="icon-box mb-25px flex gap-1">
                                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                class="transition-all duration-300">
+                                                xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300">
                                                 <path
                                                     d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
                                                     fill="url(#paint6_linear_263_514)" class="fill-primary-color">
@@ -1210,8 +866,7 @@
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
                                         <div class="icon-box mb-25px flex gap-1">
                                             <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                class="transition-all duration-300">
+                                                xmlns="http://www.w3.org/2000/svg" class="transition-all duration-300">
                                                 <path
                                                     d="M0.105431 2.18998C0.0301532 0.988687 1.02531 -0.00647222 2.2266 0.0688056L19.4961 1.15097C21.2148 1.25867 22.0029 3.34358 20.7852 4.56127L4.5979 20.7486C3.3802 21.9663 1.2953 21.1781 1.1876 19.4594L0.105431 2.18998Z"
                                                     fill="url(#paint6_linear_263_514)" class="fill-primary-color">
@@ -1404,7 +1059,8 @@
                         <!-- section heading -->
                         <div class="md:col-start-1 md:col-span-7 lg:col-span-6">
                             <div class="wow fadeInLeft" data-wow-delay=".3s">
-                                <form action="{{ url('contact-us') }}" method="POST"
+                                <form action="{{ url('contact-us') }}" method="POST" data-ajax-form
+                                    data-success-message="Thanks for contacting us, we will get in touch soon!"
                                     class="contact px-15px py-30px md:px-5 lg:px-30px lg:py-10 xl:px-10 bg-white-color dark:bg-primary-color-light rounded-15px">
                                     @csrf
                                     <div class="mb-25px">
@@ -1528,65 +1184,4 @@
         </section>
     </div>
 
-    <!-- footer area -->
-    <footer>
-        <div class="footer-inner bg-seondary-color dark:bg-dark-color">
-            <div class="container">
-                <div class="flex flex-col items-center pt-50px pb-5 md:pt-60px">
-                    <div class="footer-logo w-75px h-75px mb-2">
-                        <a href="#"><img src="./assets/img/logo/logo.png" alt="" /></a>
-                    </div>
-                    <!-- nav -->
-                    <div>
-                        <ul class="nav flex items-center gap-x-35px">
-                            {{-- <li class="nav_item group relative">
-                                <a href="about.html"
-                                    class="text-size-15 font-medium text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">About
-                                </a>
-                            </li> --}}
-                            <li class="nav_item group relative">
-                                <a href="#services"
-                                    class="text-size-15 font-medium text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Services
-                                </a>
-                            </li>
-                            <li class="nav_item group relative">
-                                <a href="#portfolio"
-                                    class="text-size-15 font-medium text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Portfolios
-                                </a>
-                            </li>
-
-                            <li class="nav_item group relative">
-                                <a href="#contact"
-                                    class="text-size-15 font-medium text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="copyright text-gray-color">
-                        © 2024 All rights reserved by
-                        <a href="index.html" class="text-white-color hover:text-primary-color">ExlonTech</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- JSS here -->
-
-    <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
-    <!-- <script src="{{ asset('assets/js/gsap-scroll-to-plugin.min.js') }}"></script>
-    <script src="{{ asset('assets/js/gsap-scroll-trigger.min.js') }}"></script>
-    <script src="{{ asset('assets/js/gsap-split-text.min.js') }}"></script> -->
-    <script src="{{ asset('assets/js/appear.min.js') }}"></script>
-    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
-    <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
-    <script src="{{ asset('assets/js/imagesloaded-pkgd.js') }}"></script>
-    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/js/backToTop.js') }}"></script>
-    <script src="{{ asset('assets/js/lenis.min.js') }}"></script>
-    <script src="{{ asset('assets/js/theme-controller.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-</body>
-
-</html>
+@endsection

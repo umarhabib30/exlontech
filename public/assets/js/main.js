@@ -168,6 +168,7 @@ indexing and active link
           },
         },
       });
+
       // Post Carousel Js
       $(".tj-post__gallery.owl-carousel").owlCarousel({
         items: 1,
@@ -282,52 +283,55 @@ indexing and active link
       ============================== Preloader =====================================
       */
     const svg = document.getElementById("preloaderSvg");
-  
+
+    let svgText = document.querySelector(".hero-section .intro_text svg text");
+    let heroAnimation = document.querySelector(".heroAnimation");
+
+    function startAnimationAfterPreloader() {
+      if (svgText) {
+        svgText.classList.add("animate-stroke");
+      }
+
+      if (heroAnimation) {
+        heroAnimation.classList.add("activeAnimation");
+      }
+    }
+
     const preTl = gsap.timeline({
       onComplete: startAnimationAfterPreloader,
     });
-  
+
     const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
     const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
-  
+
     preTl.to(".preloader-heading .load-text , .preloader-heading .cont", {
-      delay: 1.5,
+      delay: 0.2,
       y: -100,
       opacity: 0,
+      duration: 0.2,
     });
     preTl
       .to(svg, {
-        duration: 0.5,
+        duration: 0.2,
         attr: { d: curve },
         ease: "power2.easeIn",
       })
       .to(svg, {
-        duration: 0.5,
+        duration: 0.2,
         attr: { d: flat },
         ease: "power2.easeOut",
       });
     preTl.to(".preloader", {
       y: -1500,
+      duration: 0.25,
+      ease: "power2.in",
     });
     preTl.to(".preloader", {
       zIndex: -1,
       display: "none",
+      duration: 0,
     });
-  
-    let svgText = document.querySelector(".hero-section .intro_text svg text");
-    let heroAnimation = document.querySelector(".heroAnimation");
-  
-    function startAnimationAfterPreloader() {
-      if (svgText) {
-        // Add a class or directly apply styles to trigger the stroke animation
-        svgText.classList.add("animate-stroke");
-      }
-  
-      if (heroAnimation) {
-        // Add a class or directly apply styles to trigger the stroke animation
-        heroAnimation.classList.add("activeAnimation");
-      }
-    }
+
     const smoothScroll = () => {
       var links = document.querySelectorAll('a[href^="#"]');
       if (!links.length) {

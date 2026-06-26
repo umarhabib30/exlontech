@@ -3,76 +3,69 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact Form Submission</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333333;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .header {
-            background-color: #2d3748;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px 5px 0 0;
-        }
-        .content {
-            background-color: #ffffff;
-            padding: 20px;
-            border: 1px solid #e2e8f0;
-            border-radius: 0 0 5px 5px;
-        }
-        .info-row {
-            margin-bottom: 15px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 10px;
-        }
-        .label {
-            font-weight: bold;
-            color: #4a5568;
-        }
-        .message-box {
-            background-color: #f7fafc;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-    </style>
+    <title>New Contact Form Submission</title>
 </head>
-<body>
-    <div class="header">
-        <h1>New Contact Form Submission</h1>
-    </div>
+<body style="margin: 0; padding: 0; background: #0f0715; color: #f7f3ff; font-family: Arial, Helvetica, sans-serif;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background: #0f0715; padding: 32px 14px;">
+        <tr>
+            <td align="center">
+                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 680px; background: #140c1c; border: 1px solid rgba(135,80,247,0.32); border-radius: 18px; overflow: hidden;">
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #8750f7, #361c69); padding: 28px 30px;">
+                            <img src="{{ asset('assets/img/logo/logo.png') }}" alt="Exlon Tech" width="150" style="display: block; margin-bottom: 22px;">
+                            <p style="margin: 0 0 8px; color: #d8c9ff; font-size: 12px; font-weight: bold; letter-spacing: 2px; text-transform: uppercase;">Website Lead</p>
+                            <h1 style="margin: 0; color: #ffffff; font-size: 28px; line-height: 1.25;">New contact form submission</h1>
+                        </td>
+                    </tr>
 
-    <div class="content">
-        <div class="info-row">
-            <span class="label">Name:</span>
-            {{ $data['first_name'] }} {{ $data['last_name'] }}
-        </div>
+                    <tr>
+                        <td style="padding: 24px 26px;">
+                            <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="50%" style="padding: 0 7px 12px 0;">
+                                        <div style="background: #1b1026; border: 1px solid rgba(135,80,247,0.22); border-radius: 12px; padding: 12px 14px;">
+                                            <div style="color: #b57dff; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Name</div>
+                                            <div style="color: #f7f3ff; font-size: 14px; line-height: 1.45;">{{ trim(($data['first_name'] ?? '') . ' ' . ($data['last_name'] ?? '')) ?: 'Not provided' }}</div>
+                                        </div>
+                                    </td>
+                                    <td width="50%" style="padding: 0 0 12px 7px;">
+                                        <div style="background: #1b1026; border: 1px solid rgba(135,80,247,0.22); border-radius: 12px; padding: 12px 14px;">
+                                            <div style="color: #b57dff; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Email</div>
+                                            <div style="color: #f7f3ff; font-size: 14px; line-height: 1.45;">{{ $data['email'] ?? 'Not provided' }}</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="50%" style="padding: 0 7px 12px 0;">
+                                        <div style="background: #1b1026; border: 1px solid rgba(135,80,247,0.22); border-radius: 12px; padding: 12px 14px;">
+                                            <div style="color: #b57dff; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Phone</div>
+                                            <div style="color: #f7f3ff; font-size: 14px; line-height: 1.45;">{{ $data['phone'] ?? 'Not provided' }}</div>
+                                        </div>
+                                    </td>
+                                    <td width="50%" style="padding: 0 0 12px 7px;">
+                                        <div style="background: #1b1026; border: 1px solid rgba(135,80,247,0.22); border-radius: 12px; padding: 12px 14px;">
+                                            <div style="color: #b57dff; font-size: 11px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px;">Service</div>
+                                            <div style="color: #f7f3ff; font-size: 14px; line-height: 1.45;">{{ $data['service'] ?? 'Not selected' }}</div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
 
-        <div class="info-row">
-            <span class="label">Email:</span>
-            {{ $data['email'] }}
-        </div>
+                            <div style="background: #1b1026; border: 1px solid rgba(135,80,247,0.22); border-radius: 12px; padding: 14px 16px; margin-top: 2px;">
+                                <div style="color: #b57dff; font-size: 12px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px;">Message</div>
+                                <div style="color: #d8c9ff; font-size: 14px; line-height: 1.65;">{{ $data['message'] ?? 'No message provided' }}</div>
+                            </div>
+                        </td>
+                    </tr>
 
-        <div class="info-row">
-            <span class="label">Phone:</span>
-            {{ $data['phone'] }}
-        </div>
-
-        <div class="info-row">
-            <span class="label">Service Requested:</span>
-            {{ $data['service'] }}
-        </div>
-
-        <div class="message-box">
-            <span class="label">Message:</span><br>
-            {{ $data['message'] }}
-        </div>
-    </div>
+                    <tr>
+                        <td style="padding: 18px 30px 26px; border-top: 1px solid rgba(135,80,247,0.18); color: #9f8fba; font-size: 12px; line-height: 1.6;">
+                            This message was generated from the Exlon Tech website contact form.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

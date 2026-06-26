@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Support\ServicesMenu;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer(
+            ['layouts.partials.nav', 'layouts.partials.mobile-nav'],
+            function ($view) {
+                $view->with('servicesMegaMenu', ServicesMenu::megaMenu());
+            }
+        );
     }
 }
