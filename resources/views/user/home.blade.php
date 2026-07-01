@@ -63,6 +63,10 @@
             line-height: 1;
             display: block;
         }
+
+        .intro_text svg text.animate-stroke {
+            animation-duration: 2s;
+        }
     </style>
 @endpush
 
@@ -185,11 +189,11 @@
                     <!-- section heading -->
                     <div class="text-center flex flex-col items-center mb-10 md:mb-50px">
                         <h2 class="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 bg-gradient-text-light dark:bg-gradient-text bg-clip-text xl:leading-1.2 text-transparent mb-15px wow fadeInUp"
-                            data-wow-delay=".3s">
+                            data-wow-delay=".05s">
                             Our Services
                         </h2>
                         <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp"
-                            data-wow-delay=".4s">
+                            data-wow-delay=".1s">
                             We are a team of passionate and experienced developers, designers, and strategists who are
                             dedicated to
                             helping you achieve your goals. We understand that every business is unique, and we take the
@@ -200,7 +204,7 @@
                     <!-- services -->
                     <div class="services-widget relative">
                         <div class="service-item current px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
-                            data-wow-delay=".5s">
+                            data-wow-delay=".15s">
                             <a href="{{ route('web-development') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
@@ -221,7 +225,7 @@
                             </a>
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
-                            data-wow-delay=".6s">
+                            data-wow-delay=".2s">
                             <a href="{{ route('mobile-app-development') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
@@ -242,7 +246,7 @@
                             </a>
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
-                            data-wow-delay=".7s">
+                            data-wow-delay=".25s">
                             <a href="{{ route('ux-ui-design') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
@@ -262,7 +266,7 @@
                             </a>
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
-                            data-wow-delay=".8s">
+                            data-wow-delay=".3s">
                             <a href="{{ route('digital-marketing') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
@@ -283,7 +287,7 @@
                             </a>
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
-                            data-wow-delay=".8s">
+                            data-wow-delay=".3s">
                             <a href="{{ route('graphic-designing') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
@@ -304,7 +308,7 @@
                             </a>
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
-                            data-wow-delay=".8s">
+                            data-wow-delay=".3s">
                             <a href="{{ route('video-editing') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
@@ -325,7 +329,7 @@
                             </a>
                         </div>
                         <!-- bg animation -->
-                        <div class="active-bg wow fadeInUp hidden sm:block" data-wow-delay=".6s"></div>
+                        <div class="active-bg wow fadeInUp hidden sm:block" data-wow-delay=".2s"></div>
                     </div>
                 </div>
             </div>
@@ -339,11 +343,11 @@
 
                     <div class="text-center flex flex-col items-center mb-10 md:mb-50px">
                         <h2 class="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 bg-gradient-text-light dark:bg-gradient-text bg-clip-text xl:leading-1.2 text-transparent mb-15px wow fadeInUp"
-                            data-wow-delay=".3s">
+                            data-wow-delay=".05s">
                             Our Products
                         </h2>
                         <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp"
-                            data-wow-delay=".4s">
+                            data-wow-delay=".1s">
                             We take pride in offering high-quality products designed to meet your needs. Our recent products
                             showcase our commitment to innovation, reliability, and user-focused solutions across different
                             categories.
@@ -354,7 +358,7 @@
                     <!-- Products preview -->
                     <div class="text-center mb-10">
                         <div class="portfolio-filter">
-                            <div class="portfolio-box wow fadeInUp mt-10 md:mt-50px wow fadeInUp" data-wow-delay=".6s">
+                            <div class="portfolio-box wow fadeInUp mt-10 md:mt-50px wow fadeInUp" data-wow-delay=".2s">
                                 <div class="portfolio-sizer"></div>
                                 <div class="gutter-sizer"></div>
 
@@ -427,7 +431,7 @@
 
                         <a href="{{ route('portfolio') }}"
                             class="inline-flex items-center gap-2 mt-10 md:mt-50px text-size-15 font-bold text-white-color capitalize py-17px px-35px bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full leading-1 transition-all duration-300 wow fadeInUp"
-                            data-wow-delay=".7s">
+                            data-wow-delay=".25s">
                             View Full Portfolio
                             <i class="fa-solid fa-arrow-right text-sm"></i>
                         </a>
@@ -523,13 +527,13 @@
                     <div class="testimonials grid lg:grid-cols-12 gap-6">
                         <!-- section heading -->
                         <div class="lg:col-start-1 lg:col-span-5">
-                            <div class="mb-10 md:mb-50px wow fadeInUp" data-wow-delay=".3s">
+                            <div class="mb-10 md:mb-50px wow fadeInUp" data-wow-delay=".05s">
                                 <h2 class="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 bg-gradient-text-light dark:bg-gradient-text bg-clip-text xl:leading-1.2 text-transparent mb-15px wow fadeInLeft"
-                                    data-wow-delay=".3s">
+                                    data-wow-delay=".05s">
                                     Our Client's Stories
                                 </h2>
                                 <p class="text-primary-color-light dark:text-body-color wow fadeInLeft"
-                                    data-wow-delay=".4s">
+                                    data-wow-delay=".1s">
                                     We are proud to have worked with a diverse range of clients, from startups to
                                     established businesses,
                                     and we are committed to delivering the best possible results for each and every one
@@ -540,7 +544,7 @@
                         </div>
                         <!-- testimonial single -->
                         <div class="lg:col-start-6 xl:col-start-7 lg:col-span-7 xl:col-span-6 wow fadeInRight overflow-hidden"
-                            data-wow-delay=".5s">
+                            data-wow-delay=".15s">
                             <div class="owl-carousel testimonial-carousel">
                                 <div
                                     class="p-25px bg-white-color dark:bg-primary-color-light rounded-15px relative z-0 group">
@@ -923,11 +927,11 @@
                     <!-- section heading -->
                     <div class="text-center flex flex-col items-center mb-10 md:mb-50px">
                         <h2 class="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 bg-gradient-text-light dark:bg-gradient-text bg-clip-text xl:leading-1.2 text-transparent mb-15px wow fadeInUp"
-                            data-wow-delay=".3s">
+                            data-wow-delay=".05s">
                             Recent Blogs
                         </h2>
                         <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp"
-                            data-wow-delay=".4s">
+                            data-wow-delay=".1s">
                             We put your ideas and thus your wishes in the form of a unique
                             web project that inspires you and you customers.
                         </p>
@@ -935,7 +939,7 @@
                     <!-- blogs -->
 
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-25px 2xl:gap-35px">
-                        <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".5s">
+                        <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".15s">
                             <div class="rounded-10px relative overflow-hidden max-w-400 w-full">
                                 <a href="blog-details.html" class="rounded-10px overflow-hidden">
                                     <img src="./assets/img/blog/1.jpg" alt=""
@@ -972,7 +976,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".6s">
+                        <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".2s">
                             <div class="rounded-10px relative overflow-hidden max-w-400 w-full">
                                 <a href="blog-details.html" class="rounded-10px overflow-hidden">
                                     <img src="./assets/img/blog/2.jpg" alt=""
@@ -1009,7 +1013,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".7s">
+                        <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".25s">
                             <div class="rounded-10px relative overflow-hidden max-w-400 w-full">
                                 <a href="blog-details.html" class="rounded-10px overflow-hidden">
                                     <img src="./assets/img/blog/3.jpg" alt=""
@@ -1058,7 +1062,7 @@
                     <div class="flex flex-col-reverse md:grid md:grid-cols-12 md:items-center gap-x-6 gap-y-10">
                         <!-- section heading -->
                         <div class="md:col-start-1 md:col-span-7 lg:col-span-6">
-                            <div class="wow fadeInLeft" data-wow-delay=".3s">
+                            <div class="wow fadeInLeft" data-wow-delay=".05s">
                                 <form action="{{ url('contact-us') }}" method="POST" data-ajax-form
                                     data-success-message="Thanks for contacting us, we will get in touch soon!"
                                     class="contact px-15px py-30px md:px-5 lg:px-30px lg:py-10 xl:px-10 bg-white-color dark:bg-primary-color-light rounded-15px">
@@ -1069,7 +1073,7 @@
                                             Let’s work together!
                                         </h2>
                                         <p class="text-primary-color-light dark:text-body-color wow fadeInLeft"
-                                            data-wow-delay=".4s">
+                                            data-wow-delay=".1s">
                                             We work for you and your business. We are here to help you
                                             grow your business and achieve your goals. Let’s work together to make it
                                             happen!
@@ -1131,7 +1135,7 @@
                             <div class="contact-info-list">
                                 <ul class="flex flex-col gap-y-10">
                                     <li class="flex flex-wrap items-center gap-25px position-relative wow fadeInRight"
-                                        data-wow-delay=".4s">
+                                        data-wow-delay=".1s">
                                         <div
                                             class="icon-box text-xl w-50px h-50px text-white-color flex justify-center items-center flex-col bg-gradient-primary-2 rounded-full leading-1">
                                             <i class="flaticon-phone-call leading-1 mt-1"></i>
@@ -1146,7 +1150,7 @@
                                         </div>
                                     </li>
                                     <li class="flex flex-wrap items-center gap-25px position-relative wow fadeInRight"
-                                        data-wow-delay=".5s">
+                                        data-wow-delay=".15s">
                                         <div
                                             class="icon-box text-xl w-50px h-50px text-white-color flex justify-center items-center flex-col bg-gradient-primary-2 rounded-full leading-1">
                                             <i class="flaticon-mail-inbox-app leading-1 mt-1"></i>
@@ -1160,7 +1164,7 @@
                                         </div>
                                     </li>
                                     <li class="flex flex-wrap items-center gap-25px position-relative wow fadeInRight"
-                                        data-wow-delay=".6s">
+                                        data-wow-delay=".2s">
                                         <div
                                             class="icon-box text-xl w-50px h-50px text-white-color flex justify-center items-center flex-col bg-gradient-primary-2 rounded-full leading-1">
                                             <i class="flaticon-location leading-1 mt-1"></i>

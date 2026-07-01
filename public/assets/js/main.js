@@ -32,18 +32,25 @@ indexing and active link
 
 (function ($) {
     "use strict";
-  
-    var windowSize = $(window).width();
-    $(window).on("load", function () {
-      // WoW Js
-      var wow = new WOW({
-        boxClass: "wow", // default
-        animateClass: "animated", // default
-        offset: 100, // default
-        mobile: true, // default
-        live: true, // default
+
+    var wowInstance = null;
+
+    function initWow() {
+      if (wowInstance || typeof WOW === "undefined") {
+        return;
+      }
+
+      wowInstance = new WOW({
+        boxClass: "wow",
+        animateClass: "animated",
+        offset: 20,
+        mobile: true,
+        live: true,
       });
-      wow.init();
+      wowInstance.init();
+    }
+
+    $(function () {
       // mobile toggle button
       const mobileMenus = document.querySelectorAll(".mobile-menu");
       if (mobileMenus?.length) {
@@ -295,42 +302,63 @@ indexing and active link
       if (heroAnimation) {
         heroAnimation.classList.add("activeAnimation");
       }
+
+      initWow();
     }
 
-    const preTl = gsap.timeline({
-      onComplete: startAnimationAfterPreloader,
-    });
+    function hidePreloaderImmediately() {
+      const preloader = document.querySelector(".preloader");
 
-    const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-    const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+      if (preloader) {
+        preloader.style.display = "none";
+        preloader.style.zIndex = "-1";
+      }
 
-    preTl.to(".preloader-heading .load-text , .preloader-heading .cont", {
-      delay: 0.2,
-      y: -100,
-      opacity: 0,
-      duration: 0.2,
-    });
-    preTl
-      .to(svg, {
-        duration: 0.2,
-        attr: { d: curve },
-        ease: "power2.easeIn",
-      })
-      .to(svg, {
-        duration: 0.2,
-        attr: { d: flat },
-        ease: "power2.easeOut",
+      startAnimationAfterPreloader();
+    }
+
+    const preloader = document.querySelector(".preloader");
+    const skipPreloader = sessionStorage.getItem("exlon_preloader_shown") === "1";
+
+    if (!preloader || skipPreloader) {
+      hidePreloaderImmediately();
+    } else {
+      sessionStorage.setItem("exlon_preloader_shown", "1");
+
+      const preTl = gsap.timeline({
+        onComplete: startAnimationAfterPreloader,
       });
-    preTl.to(".preloader", {
-      y: -1500,
-      duration: 0.25,
-      ease: "power2.in",
-    });
-    preTl.to(".preloader", {
-      zIndex: -1,
-      display: "none",
-      duration: 0,
-    });
+
+      const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
+      const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+
+      preTl.to(".preloader-heading .load-text , .preloader-heading .cont", {
+        y: -100,
+        opacity: 0,
+        duration: 0.15,
+      });
+      preTl
+        .to(svg, {
+          duration: 0.15,
+          attr: { d: curve },
+          ease: "power2.easeIn",
+        })
+        .to(svg, {
+          duration: 0.15,
+          attr: { d: flat },
+          ease: "power2.easeOut",
+        });
+      preTl.to(".preloader", {
+        y: -1500,
+        duration: 0.2,
+        ease: "power2.in",
+      });
+      preTl.to(".preloader", {
+        zIndex: -1,
+        display: "none",
+        duration: 0,
+      });
+    }
 
     const smoothScroll = () => {
       var links = document.querySelectorAll('a[href^="#"]');
@@ -354,29 +382,7 @@ indexing and active link
     };
   
     smoothScroll();
-  
-    // Portfolio Filter Js
-    $(".portfolio-box").imagesLoaded(function () {
-      var $grid = $(".portfolio-box").isotope({
-        // options
-        masonry: {
-          columnWidth: ".portfolio-box .portfolio-sizer",
-          gutter: ".portfolio-box .gutter-sizer",
-        },
-        itemSelector: ".portfolio-box .portfolio-item",
-        percentPosition: true,
-      });
-  
-      // filter items on button click
-      $(".filter-button-group").on("click", "button", function () {
-        $(".filter-button-group button").removeClass("active");
-        $(this).addClass("active");
-  
-        var filterValue = $(this).attr("data-filter");
-        $grid.isotope({ filter: filterValue });
-      });
-    });
-  
+
     function filter_animation() {
       var active_bg = $(".portfolio-filter .button-group .active-bg");
       var element = $(".portfolio-filter .button-group .active");
