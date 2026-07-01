@@ -25,6 +25,7 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
+        aspect-ratio: 16 / 9;
         border-radius: 10px;
         background: rgba(255, 255, 255, 0.02);
     }
@@ -33,7 +34,7 @@
         display: block;
         width: 100%;
         max-width: 100%;
-        height: auto;
+        height: 100%;
         margin: 0 auto;
         object-fit: contain;
         object-position: center;
@@ -94,7 +95,8 @@
 
                         <div class="portfolio-item branding bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
-                                <img src="{{ asset('assets/img/portfolio_images/p2.png') }}" alt="Restore Partner Pro"
+                                <img src="{{ asset('assets/img/portfolio_images/p2.jpg') }}" alt="Restore Partner Pro"
+                                    width="1920" height="1080" loading="lazy" decoding="async"
                                     class="portfolio-page__image" />
                             </div>
                             <div class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full px-15px lg:px-5 transition-all duration-300">
@@ -113,7 +115,8 @@
 
                         <div class="portfolio-item uxui bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
-                                <img src="{{ asset('assets/img/portfolio_images/p1.png') }}" alt="Global Mind Consultants"
+                                <img src="{{ asset('assets/img/portfolio_images/p1.jpg') }}" alt="Global Mind Consultants"
+                                    width="1920" height="1080" loading="lazy" decoding="async"
                                     class="portfolio-page__image" />
                             </div>
                             <div class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full px-15px lg:px-5 transition-all duration-300">
@@ -132,7 +135,8 @@
 
                         <div class="portfolio-item web bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
-                                <img src="{{ asset('assets/img/portfolio_images/p5.png') }}" alt="Booking Management System"
+                                <img src="{{ asset('assets/img/portfolio_images/p5.jpg') }}" alt="Booking Management System"
+                                    width="1920" height="1080" loading="lazy" decoding="async"
                                     class="portfolio-page__image" />
                             </div>
                             <div class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full px-15px lg:px-5 transition-all duration-300">
@@ -151,7 +155,8 @@
 
                         <div class="portfolio-item web bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
-                                <img src="{{ asset('assets/img/portfolio_images/p6.png') }}" alt="Disaster Management System"
+                                <img src="{{ asset('assets/img/portfolio_images/p6.jpg') }}" alt="Disaster Management System"
+                                    width="1920" height="1080" loading="lazy" decoding="async"
                                     class="portfolio-page__image" />
                             </div>
                             <div class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full px-15px lg:px-5 transition-all duration-300">
@@ -170,7 +175,8 @@
 
                         <div class="portfolio-item mobile-app bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
-                                <img src="{{ asset('assets/img/portfolio_images/p7.png') }}" alt="HQA School Management System"
+                                <img src="{{ asset('assets/img/portfolio_images/p7.jpg') }}" alt="HQA School Management System"
+                                    width="1920" height="1080" loading="lazy" decoding="async"
                                     class="portfolio-page__image" />
                             </div>
                             <div class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full px-15px lg:px-5 transition-all duration-300">
@@ -189,7 +195,8 @@
 
                         <div class="portfolio-item branding bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
-                                <img src="{{ asset('assets/img/portfolio_images/p3.png') }}" alt="The Genius Arena"
+                                <img src="{{ asset('assets/img/portfolio_images/p3.jpg') }}" alt="The Genius Arena"
+                                    width="1920" height="1080" loading="lazy" decoding="async"
                                     class="portfolio-page__image" />
                             </div>
                             <div class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full px-15px lg:px-5 transition-all duration-300">

@@ -364,8 +364,9 @@
 
                                 <div
                                     class="portfolio-item branding bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                    <img src="{{ asset('assets/img/portfolio_images/p5.png') }}"
-                                        alt="Restore Partner Pro" />
+                                    <img src="{{ asset('assets/img/portfolio_images/p5.jpg') }}"
+                                        alt="Restore Partner Pro" width="1920" height="1080" loading="lazy"
+                                        decoding="async" />
                                     <div
                                         class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
                                         <a href="https://tajmehal.exlontech.com/" target="_blank"
@@ -386,8 +387,9 @@
 
                                 <div
                                     class="portfolio-item uxui bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                    <img src="{{ asset('assets/img/portfolio_images/p6.png') }}"
-                                        alt="Global Mind Consultants" />
+                                    <img src="{{ asset('assets/img/portfolio_images/p6.jpg') }}"
+                                        alt="Global Mind Consultants" width="1920" height="1080" loading="lazy"
+                                        decoding="async" />
                                     <div
                                         class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
                                         <a href="https://distribution.exlontech.com/" target="_blank"
@@ -407,8 +409,9 @@
                                 </div>
                                 <div
                                     class="portfolio-item uxui bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                    <img src="{{ asset('assets/img/portfolio_images/p8.png') }}"
-                                        alt="Chatbot Assistant" />
+                                    <img src="{{ asset('assets/img/portfolio_images/p8.jpg') }}"
+                                        alt="Chatbot Assistant" width="1920" height="1080" loading="lazy"
+                                        decoding="async" />
                                     <div
                                         class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full group-hover: px-15px lg:px-5 transition-all duration-300">
                                         <a href="https://chatbot.exlontech.com/" target="_blank"

@@ -132,9 +132,8 @@ indexing and active link
       }
   
       // Portfolio Filter Js
-      $(".portfolio-box").imagesLoaded(function () {
+      if ($(".portfolio-box").length > 0) {
         var $grid = $(".portfolio-box").isotope({
-          // options
           masonry: {
             columnWidth: ".portfolio-box .portfolio-sizer",
             gutter: ".portfolio-box .gutter-sizer",
@@ -142,16 +141,20 @@ indexing and active link
           itemSelector: ".portfolio-box .portfolio-item",
           percentPosition: true,
         });
-  
-        // filter items on button click
+
+        // Do not block the initial grid render while large portfolio images download.
+        $grid.imagesLoaded().progress(function () {
+          $grid.isotope("layout");
+        });
+
         $(".filter-button-group").on("click", "button", function () {
           $(".filter-button-group button").removeClass("active");
           $(this).addClass("active");
-  
+
           var filterValue = $(this).attr("data-filter");
           $grid.isotope({ filter: filterValue });
         });
-      });
+      }
   
       // Testimonial Carousel Js
       $(".testimonial-carousel.owl-carousel").owlCarousel({
