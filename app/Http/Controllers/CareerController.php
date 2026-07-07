@@ -25,7 +25,7 @@ class CareerController extends Controller
                 'description' => 'Explore careers at Exlon Tech and apply for openings in web development, mobile app development, UI/UX design, digital marketing, SEO, and creative services.',
                 'keywords' => 'Exlon Tech careers, software jobs Pakistan, web developer jobs, app developer jobs, UI UX jobs, digital marketing jobs, SEO jobs, graphic design jobs',
                 'canonical' => route('careers.index'),
-                'image' => asset('assets/img/logo/logo.png'),
+                'image' => 'assets/img/logo/logo.png',
                 'image_alt' => 'Careers at Exlon Tech',
             ],
         ]);
@@ -51,7 +51,7 @@ class CareerController extends Controller
                     'digital agency jobs',
                 ])),
                 'canonical' => route('careers.show', $job),
-                'image' => asset('assets/img/logo/logo.png'),
+                'image' => 'assets/img/logo/logo.png',
                 'image_alt' => $job->title . ' at Exlon Tech',
                 'type' => 'article',
                 'json_ld_extra' => [[
@@ -65,7 +65,7 @@ class CareerController extends Controller
                         '@type' => 'Organization',
                         'name' => 'Exlon Tech',
                         'sameAs' => route('home'),
-                        'logo' => asset('assets/img/logo/logo.png'),
+                        'logo' => \App\Support\SeoMeta::assetUrl('assets/img/logo/logo.png'),
                     ],
                     'jobLocation' => [
                         '@type' => 'Place',

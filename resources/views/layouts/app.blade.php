@@ -3,18 +3,18 @@
 
 <head>
     @include('layouts.partials.meta')
-    <link rel="stylesheet" href="{{ asset('assets/css/animate.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome-pro.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/flaticon_gerold.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/backToTop.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/swiper.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/odometer-theme-default.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/site-footer.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/css/services-dropdown.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/animate.min.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/font-awesome-pro.min.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/flaticon_gerold.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/nice-select.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/backToTop.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/owl.carousel.min.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/swiper.min.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/odometer-theme-default.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/magnific-popup.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/site-footer.css') }}" />
+    <link rel="stylesheet" href="{{ public_asset('assets/css/services-dropdown.css') }}" />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -130,9 +130,9 @@
                             <li>
                                 <a href="{{ route('home') }}" class="logo">
                                     <img class="hidden dark:inline-block" style="width: 160px;"
-                                        src="{{ asset('assets/img/logo/logo.png') }}" alt="Exlon Tech" />
+                                        src="{{ public_asset('assets/img/logo/logo.png') }}" alt="Exlon Tech" />
                                     <img class="inlin-block dark:hidden" style="width: 160px;"
-                                        src="{{ asset('assets/img/logo/logo-dark.png') }}" alt="Exlon Tech" />
+                                        src="{{ public_asset('assets/img/logo/logo-dark.png') }}" alt="Exlon Tech" />
                                 </a>
                             </li>
                             {{-- <li class="hidden md:block">
@@ -164,9 +164,9 @@
                             <li>
                                 <a href="{{ route('home') }}" class="logo">
                                     <img class="hidden dark:inline-block" style="width: 160px;"
-                                        src="{{ asset('assets/img/logo/logo.png') }}" alt="Exlon Tech" />
+                                        src="{{ public_asset('assets/img/logo/logo.png') }}" alt="Exlon Tech" />
                                     <img class="inlin-block dark:hidden" style="width: 160px;"
-                                        src="{{ asset('assets/img/logo/logo-dark.png') }}" alt="Exlon Tech" />
+                                        src="{{ public_asset('assets/img/logo/logo-dark.png') }}" alt="Exlon Tech" />
                                 </a>
                             </li>
                             {{-- <li class="hidden md:block">
@@ -193,18 +193,18 @@
 
     @include('layouts.partials.footer')
 
-    <script src="{{ asset('assets/js/gsap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/appear.min.js') }}"></script>
-    <script src="{{ asset('assets/js/wow.min.js') }}"></script>
-    <script src="{{ asset('assets/js/odometer.min.js') }}"></script>
-    <script src="{{ asset('assets/js/imagesloaded-pkgd.js') }}"></script>
-    <script src="{{ asset('assets/js/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/js/backToTop.js') }}"></script>
-    <script src="{{ asset('assets/js/lenis.min.js') }}"></script>
-    <script src="{{ asset('assets/js/theme-controller.js') }}"></script>
-    <script src="{{ asset('assets/js/main.js') }}"></script>
+    <script src="{{ public_asset('assets/js/gsap.min.js') }}"></script>
+    <script src="{{ public_asset('assets/js/appear.min.js') }}"></script>
+    <script src="{{ public_asset('assets/js/wow.min.js') }}"></script>
+    <script src="{{ public_asset('assets/js/odometer.min.js') }}"></script>
+    <script src="{{ public_asset('assets/js/imagesloaded-pkgd.js') }}"></script>
+    <script src="{{ public_asset('assets/js/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ public_asset('assets/js/owl.carousel.min.js') }}"></script>
+    <script src="{{ public_asset('assets/js/nice-select.min.js') }}"></script>
+    <script src="{{ public_asset('assets/js/backToTop.js') }}"></script>
+    <script src="{{ public_asset('assets/js/lenis.min.js') }}"></script>
+    <script src="{{ public_asset('assets/js/theme-controller.js') }}"></script>
+    <script src="{{ public_asset('assets/js/main.js') }}"></script>
     <script>
         const exlonAlert = Swal.mixin({
             confirmButtonColor: '#8750f7',

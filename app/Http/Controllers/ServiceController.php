@@ -90,7 +90,7 @@ class ServiceController extends Controller
                 'description' => $seo['description'],
                 'keywords' => $seo['keywords'],
                 'canonical' => url()->current(),
-                'image' => asset($seo['image']),
+                'image' => $seo['image'],
                 'image_alt' => $seo['image_alt'] ?? $title,
             ],
         ]);

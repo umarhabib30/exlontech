@@ -32,8 +32,8 @@
 <meta name="geo.placename" content="{{ $seo['geo_placename'] }}" />
 
 <link rel="canonical" href="{{ $seo['canonical'] }}" />
-<link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}" />
-<link rel="apple-touch-icon" href="{{ asset('assets/img/logo/logo.png') }}" />
+<link rel="icon" type="image/x-icon" href="{{ public_asset('assets/favicon.ico') }}" />
+<link rel="apple-touch-icon" href="{{ public_asset('assets/img/logo/logo.png') }}" />
 
 <meta property="og:type" content="{{ $seo['type'] }}" />
 <meta property="og:locale" content="{{ $seo['locale'] }}" />

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>@yield('title', $title ?? 'Admin | Exlon Tech')</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/favicon.ico') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/font-awesome-pro.min.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ public_asset('assets/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ public_asset('assets/css/font-awesome-pro.min.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">

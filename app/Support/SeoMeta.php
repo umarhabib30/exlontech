@@ -11,7 +11,7 @@ class SeoMeta
             'description' => 'Exlon Tech builds modern websites, mobile apps, UI/UX design, branding, SEO, digital marketing, and video editing solutions for businesses in Pakistan and worldwide.',
             'keywords' => 'Exlon Tech, web development, mobile app development, UI UX design, graphic design, digital marketing, SEO services, video editing, Laravel development, software company Pakistan, Sargodha',
             'canonical' => self::currentCanonicalUrl(),
-            'image' => asset('assets/img/services/web hero.jpg'),
+            'image' => self::assetUrl('assets/img/services/web hero.jpg'),
             'image_alt' => 'Exlon Tech digital agency',
             'type' => 'website',
             'robots' => 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
@@ -118,7 +118,7 @@ class SeoMeta
 
     public static function siteUrl(): string
     {
-        return self::normalizeUrl(config('app.url', url('/')), false);
+        return self::normalizeUrl(config('seo.site_url', config('app.url', url('/'))), false);
     }
 
     public static function canonicalUrl(string $url): string
@@ -132,12 +132,12 @@ class SeoMeta
             return self::normalizeUrl($url, false);
         }
 
-        return self::normalizeUrl(asset(ltrim($url, '/')), false);
+        return self::normalizeUrl(self::siteUrl() . '/' . ltrim($url, '/'), false);
     }
 
     private static function normalizeUrl(string $url, bool $trimTrailingSlash): string
     {
-        $base = parse_url(config('app.url', url('/'))) ?: [];
+        $base = parse_url(config('seo.site_url', config('app.url', url('/')))) ?: [];
         $parts = parse_url($url) ?: [];
 
         $scheme = $parts['scheme'] ?? ($base['scheme'] ?? 'https');
