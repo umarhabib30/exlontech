@@ -10,7 +10,7 @@ class SeoMeta
             'title' => $fallbackTitle ?: 'Exlon Tech | Web Development, Mobile Apps, Design & Digital Marketing',
             'description' => 'Exlon Tech builds modern websites, mobile apps, UI/UX design, branding, SEO, digital marketing, and video editing solutions for businesses in Pakistan and worldwide.',
             'keywords' => 'Exlon Tech, web development, mobile app development, UI UX design, graphic design, digital marketing, SEO services, video editing, Laravel development, software company Pakistan, Sargodha',
-            'canonical' => url()->current(),
+            'canonical' => self::currentCanonicalUrl(),
             'image' => asset('assets/img/services/web hero.jpg'),
             'image_alt' => 'Exlon Tech digital agency',
             'type' => 'website',
@@ -42,8 +42,8 @@ class SeoMeta
 
         $meta['title'] = self::trim($meta['title'], 70);
         $meta['description'] = self::trim($meta['description'], 160);
-        $meta['canonical'] = self::absoluteUrl($meta['canonical']);
-        $meta['image'] = self::absoluteUrl($meta['image']);
+        $meta['canonical'] = self::canonicalUrl($meta['canonical']);
+        $meta['image'] = self::assetUrl($meta['image']);
         $meta['image_alt'] = self::trim($meta['image_alt'] ?: $meta['title'], 120);
 
         return $meta;
@@ -55,8 +55,8 @@ class SeoMeta
             '@context' => 'https://schema.org',
             '@type' => 'Organization',
             'name' => 'Exlon Tech',
-            'url' => route('home'),
-            'logo' => self::absoluteUrl(asset('assets/img/logo/logo.png')),
+            'url' => self::siteUrl(),
+            'logo' => self::assetUrl('assets/img/logo/logo.png'),
             'image' => $seo['image'],
             'description' => $seo['description'],
             'email' => $seo['email'],
@@ -82,7 +82,7 @@ class SeoMeta
             '@context' => 'https://schema.org',
             '@type' => 'WebSite',
             'name' => $seo['site_name'],
-            'url' => route('home'),
+            'url' => self::siteUrl(),
             'description' => $seo['description'],
             'publisher' => [
                 '@type' => 'Organization',
@@ -104,18 +104,69 @@ class SeoMeta
             'isPartOf' => [
                 '@type' => 'WebSite',
                 'name' => $seo['site_name'],
-                'url' => route('home'),
+                'url' => self::siteUrl(),
             ],
         ];
     }
 
-    private static function absoluteUrl(string $url): string
+    public static function currentCanonicalUrl(): string
+    {
+        $path = request()->getPathInfo() ?: '/';
+
+        return self::canonicalUrl($path);
+    }
+
+    public static function siteUrl(): string
+    {
+        return self::normalizeUrl(config('app.url', url('/')), false);
+    }
+
+    public static function canonicalUrl(string $url): string
+    {
+        return self::normalizeUrl($url, true);
+    }
+
+    public static function assetUrl(string $url): string
     {
         if (str_starts_with($url, 'http://') || str_starts_with($url, 'https://')) {
-            return $url;
+            return self::normalizeUrl($url, false);
         }
 
-        return url($url);
+        return self::normalizeUrl(asset(ltrim($url, '/')), false);
+    }
+
+    private static function normalizeUrl(string $url, bool $trimTrailingSlash): string
+    {
+        $base = parse_url(config('app.url', url('/'))) ?: [];
+        $parts = parse_url($url) ?: [];
+
+        $scheme = $parts['scheme'] ?? ($base['scheme'] ?? 'https');
+        $host = strtolower($parts['host'] ?? ($base['host'] ?? request()->getHost()));
+        $port = $parts['port'] ?? ($base['port'] ?? null);
+        $path = $parts['path'] ?? '/';
+        $query = $parts['query'] ?? null;
+
+        if (! str_starts_with($path, '/')) {
+            $path = '/' . $path;
+        }
+
+        if ($trimTrailingSlash && $path !== '/') {
+            $path = rtrim($path, '/');
+        }
+
+        $normalized = $scheme . '://' . $host;
+
+        if ($port && ! in_array([$scheme, $port], [['http', 80], ['https', 443]], true)) {
+            $normalized .= ':' . $port;
+        }
+
+        $normalized .= $path;
+
+        if ($query) {
+            $normalized .= '?' . $query;
+        }
+
+        return $normalized;
     }
 
     private static function trim(string $value, int $limit): string
