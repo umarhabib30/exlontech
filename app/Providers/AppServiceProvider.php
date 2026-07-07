@@ -22,15 +22,18 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $appUrl = config('app.url');
+        $appUrl = (string) config('app.url');
+        $host = parse_url($appUrl, PHP_URL_HOST);
+        $scheme = parse_url($appUrl, PHP_URL_SCHEME);
 
-        if ($appUrl) {
+        // Only pin generated URLs to a real production domain. We never force the
+        // scheme down to http, since that fights an HTTPS reverse proxy / .htaccess
+        // rule and creates an infinite redirect loop.
+        if (is_string($host) && $host !== '' && ! in_array($host, ['localhost', '127.0.0.1'], true)) {
             URL::forceRootUrl($appUrl);
 
-            $scheme = parse_url($appUrl, PHP_URL_SCHEME);
-
-            if (is_string($scheme) && $scheme !== '') {
-                URL::forceScheme($scheme);
+            if ($scheme === 'https') {
+                URL::forceScheme('https');
             }
         }
 
