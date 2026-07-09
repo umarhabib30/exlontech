@@ -1,14 +1,25 @@
 @php
     $seo = \App\Support\SeoMeta::make($meta ?? [], $title ?? null);
 
-    $structuredData = array_merge(
-        [
-            \App\Support\SeoMeta::organizationSchema($seo),
-            \App\Support\SeoMeta::websiteSchema($seo),
-            \App\Support\SeoMeta::webPageSchema($seo),
-        ],
-        $seo['json_ld_extra'] ?? []
-    );
+    $structuredData = [
+        \App\Support\SeoMeta::organizationSchema($seo),
+        \App\Support\SeoMeta::websiteSchema($seo),
+        \App\Support\SeoMeta::webPageSchema($seo),
+    ];
+
+    if ($breadcrumbSchema = \App\Support\SeoMeta::breadcrumbSchema($seo['breadcrumbs'] ?? [])) {
+        $structuredData[] = $breadcrumbSchema;
+    }
+
+    if (! empty($seo['service'])) {
+        $structuredData[] = \App\Support\SeoMeta::serviceSchema($seo['service'], $seo);
+    }
+
+    if ($faqSchema = \App\Support\SeoMeta::faqSchema($seo['faqs'] ?? [])) {
+        $structuredData[] = $faqSchema;
+    }
+
+    $structuredData = array_merge($structuredData, $seo['json_ld_extra'] ?? []);
 @endphp
 
 <meta charset="UTF-8" />

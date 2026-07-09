@@ -9,10 +9,10 @@
             </a>
 
             <p class="site-footer__tagline">
-                Turning Ideas into Digital Reality.
+                ExlonTech is a Pakistan-based digital solutions agency helping businesses worldwide build scalable
+                websites, mobile apps, ecommerce platforms, custom software, SEO campaigns, branding, and digital
+                marketing systems.
             </p>
-
-            <a href="#" class="site-footer__legal-link">Privacy Policy</a>
 
             <ul class="site-footer__socials">
                 <li>
@@ -41,12 +41,16 @@
         <div class="site-footer__services">
             <h3 class="site-footer__column-title">Services</h3>
             <ul class="site-footer__links">
-                <li><a href="{{ route('web-development') }}">Website Development</a></li>
-                <li><a href="{{ route('mobile-app-development') }}">App Development</a></li>
-                <li><a href="{{ route('ux-ui-design') }}">UI/UX Design</a></li>
-                <li><a href="{{ route('graphic-designing') }}">Graphics Designing</a></li>
+                <li><a href="{{ route('web-development') }}">Web Development</a></li>
+                <li><a href="{{ route('mobile-app-development') }}">Mobile App Development</a></li>
+                <li><a href="{{ route('custom-software-saas') }}">Custom Software Development</a></li>
+                <li><a href="{{ route('ecommerce-development') }}">Ecommerce Development</a></li>
+                <li><a href="{{ route('seo') }}">SEO Services</a></li>
                 <li><a href="{{ route('digital-marketing') }}">Digital Marketing</a></li>
-                <li><a href="{{ route('seo') }}">SEO</a></li>
+                <li><a href="{{ route('ux-ui-design') }}">UI/UX Design</a></li>
+                <li><a href="{{ route('portfolio') }}">Portfolio / Case Studies</a></li>
+                <li><a href="{{ route('about') }}">About</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
                 <li><a href="{{ route('video-editing') }}">Video Editing</a></li>
             </ul>
         </div>

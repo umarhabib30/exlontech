@@ -7,14 +7,18 @@ class PortfolioController extends Controller
     public function index()
     {
         return view('user.portfolio', [
-            'title' => 'Portfolio | Exlon Tech',
+            'title' => 'Case Studies & Portfolio | ExlonTech Projects',
             'meta' => [
-                'title' => 'Portfolio | Exlon Tech Projects & Digital Solutions',
-                'description' => 'Explore Exlon Tech portfolio projects across web development, mobile apps, UI/UX design, branding, booking systems, business platforms, and digital products.',
-                'keywords' => 'Exlon Tech portfolio, web development projects, mobile app projects, UI UX portfolio, branding projects, Laravel projects, software portfolio Pakistan',
+                'title' => 'Case Studies & Portfolio | ExlonTech Projects',
+                'description' => 'Explore ExlonTech’s web development, mobile app, ecommerce, SaaS, branding, SEO, and digital marketing projects for businesses and startups.',
+                'keywords' => 'ExlonTech portfolio, case studies, web development projects, mobile app projects, ecommerce projects, SaaS projects, Laravel projects, software portfolio Pakistan',
                 'canonical' => route('portfolio'),
                 'image' => 'assets/img/portfolio_images/p1.jpg',
-                'image_alt' => 'Exlon Tech portfolio projects showcase',
+                'image_alt' => 'ExlonTech case studies and portfolio projects',
+                'breadcrumbs' => [
+                    ['name' => 'Home', 'url' => route('home')],
+                    ['name' => 'Case Studies & Portfolio', 'url' => route('portfolio')],
+                ],
             ],
         ]);
     }

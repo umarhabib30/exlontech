@@ -18,15 +18,15 @@ class CareerController extends Controller
     public function index(): View
     {
         return view('user.careers.index', [
-            'title' => 'Careers | Exlon Tech',
+            'title' => 'Careers | ExlonTech',
             'jobs' => Job::open()->latest()->get(),
             'meta' => [
-                'title' => 'Careers | Exlon Tech Jobs & Opportunities',
-                'description' => 'Explore careers at Exlon Tech and apply for openings in web development, mobile app development, UI/UX design, digital marketing, SEO, and creative services.',
-                'keywords' => 'Exlon Tech careers, software jobs Pakistan, web developer jobs, app developer jobs, UI UX jobs, digital marketing jobs, SEO jobs, graphic design jobs',
+                'title' => 'Careers | ExlonTech Jobs & Opportunities',
+                'description' => 'Explore careers at ExlonTech and apply for openings in web development, mobile app development, UI/UX design, digital marketing, SEO, and creative services.',
+                'keywords' => 'ExlonTech careers, software jobs Pakistan, web developer jobs, app developer jobs, UI UX jobs, digital marketing jobs, SEO jobs, graphic design jobs',
                 'canonical' => route('careers.index'),
                 'image' => 'assets/img/logo/logo.png',
-                'image_alt' => 'Careers at Exlon Tech',
+                'image_alt' => 'Careers at ExlonTech',
             ],
         ]);
     }
@@ -36,23 +36,23 @@ class CareerController extends Controller
         abort_unless($job->is_active, 404);
 
         return view('user.careers.show', [
-            'title' => $job->title . ' | Careers | Exlon Tech',
+            'title' => $job->title . ' | Careers | ExlonTech',
             'job' => $job,
             'meta' => [
-                'title' => $job->title . ' | Careers | Exlon Tech',
+                'title' => $job->title . ' | Careers | ExlonTech',
                 'description' => Str::limit(strip_tags($job->description), 155),
                 'keywords' => implode(', ', array_filter([
                     $job->title,
                     $job->type,
                     $job->location,
                     $job->experience_level,
-                    'Exlon Tech careers',
+                    'ExlonTech careers',
                     'software jobs Pakistan',
                     'digital agency jobs',
                 ])),
                 'canonical' => route('careers.show', $job),
                 'image' => 'assets/img/logo/logo.png',
-                'image_alt' => $job->title . ' at Exlon Tech',
+                'image_alt' => $job->title . ' at ExlonTech',
                 'type' => 'article',
                 'json_ld_extra' => [[
                     '@context' => 'https://schema.org',
@@ -63,7 +63,7 @@ class CareerController extends Controller
                     'employmentType' => strtoupper(str_replace(' ', '_', $job->type ?? 'FULL_TIME')),
                     'hiringOrganization' => [
                         '@type' => 'Organization',
-                        'name' => 'Exlon Tech',
+                        'name' => 'ExlonTech',
                         'sameAs' => route('home'),
                         'logo' => \App\Support\SeoMeta::assetUrl('assets/img/logo/logo.png'),
                     ],

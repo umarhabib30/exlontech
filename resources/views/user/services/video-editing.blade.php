@@ -375,15 +375,15 @@
         class="relative py-[200px] px-4 sm:px-6 md:px-12 lg:px-[80px] xl:px-[125px] 2xl:px-[127px] bg-cover bg-center bg-no-repeat"
         style="background-image: url('{{ asset('assets/img/services/videobg.jpg') }}')">
         <div class="mx-auto max-w-7xl flex flex-col items-center text-center md:items-start md:text-left space-y-6">
-            <h2 class="text-4xl sm:text-5xl font-bold">Video Editing</h2>
+            <h1 class="text-4xl sm:text-5xl font-bold">{{ $serviceH1 ?? 'Video Editing Services for Brands & Marketing Teams' }}</h1>
 
             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold w-[480px] text-white" data-wow-delay=".4s">
                 Professional Video Editing Crafted Around Your Story
             </h3>
 
             <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp" data-wow-delay=".4s">
-                Boost engagement with our top-tier video editing service. Transform raw footage into polished,
-                compelling content that captivates audiences across every platform.
+                Transform raw footage into polished marketing videos, reels, YouTube content, motion graphics, and
+                platform-ready brand assets.
             </p>
 
             <a href="{{ route('home') }}#contact"
@@ -770,7 +770,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12">
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/Property 1=Group 36.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
+                    <img src="{{ asset('assets/img/services/Property 1=Group 36.png') }}" alt="Service feature icon" class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">Project Based</h3>
                         <p class="text-white text-sm leading-relaxed">
@@ -781,7 +781,7 @@
 
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/Property 1=Group 37.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
+                    <img src="{{ asset('assets/img/services/Property 1=Group 37.png') }}" alt="Service feature icon" class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">Hourly Basis</h3>
                         <p class="text-white text-sm leading-relaxed">
@@ -792,7 +792,7 @@
 
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/Property 1=Group 39.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
+                    <img src="{{ asset('assets/img/services/Property 1=Group 39.png') }}" alt="Service feature icon" class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">Dedicated Team</h3>
                         <p class="text-white text-sm leading-relaxed">
@@ -803,7 +803,7 @@
 
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/Property 1=Group 38.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
+                    <img src="{{ asset('assets/img/services/Property 1=Group 38.png') }}" alt="Service feature icon" class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">Not Sure</h3>
                         <p class="text-white text-sm leading-relaxed">

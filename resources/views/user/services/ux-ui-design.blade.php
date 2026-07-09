@@ -417,15 +417,15 @@
         class="relative py-[200px] px-4 sm:px-6 md:px-12 lg:px-[80px] xl:px-[125px] 2xl:px-[127px] bg-cover bg-center bg-no-repeat"
         style="background-image: url('{{ asset('assets/img/services/uiux.jpg') }}')">
         <div class="mx-auto max-w-7xl flex flex-col items-center text-center md:items-start md:text-left space-y-6">
-            <h2 class="text-4xl sm:text-5xl font-bold">UI/UX Design</h2>
+            <h1 class="text-4xl sm:text-5xl font-bold">{{ $serviceH1 ?? 'UI/UX Design Services for Websites, Apps & SaaS' }}</h1>
 
             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold w-[480px] text-white" data-wow-delay=".4s">
-                Helping Businesses and Learners Grow — Together
+                Conversion-focused design for websites, mobile apps, SaaS dashboards, and ecommerce products.
             </h3>
 
             <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp" data-wow-delay=".4s">
-                Boost engagement with our top-tier UI/UX design service. Craft captivating interfaces for seamless
-                navigation and enhanced digital presence.
+                ExlonTech creates clean, modern, and user-friendly interfaces that help global businesses improve
+                usability, trust, and conversion flow.
             </p>
 
             <a href="{{ route('home') }}#contact"
@@ -447,7 +447,7 @@
                 <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp">
                     In today's digital world, great UI/UX design isn't just a bonus — it's essential. It shapes the first
                     impression your users get, keeps them engaged, and plays a big role in your business's success. At
-                    Exlon Tech, we specialize in creating clean, user-friendly designs that not only look good but feel
+                    ExlonTech, we specialize in creating clean, user-friendly designs that not only look good but feel
                     right.
                 </p>
 
@@ -819,7 +819,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12">
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/icon13.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
+                    <img src="{{ asset('assets/img/services/icon13.png') }}" alt="Service feature icon" class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">Project Based</h3>
                         <p class="text-white text-sm leading-relaxed">
@@ -830,7 +830,7 @@
 
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/icon14.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
+                    <img src="{{ asset('assets/img/services/icon14.png') }}" alt="Service feature icon" class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">Hourly Basis</h3>
                         <p class="text-white text-sm leading-relaxed">
@@ -841,7 +841,7 @@
 
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/icon15.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
+                    <img src="{{ asset('assets/img/services/icon15.png') }}" alt="Service feature icon" class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">Dedicated Team</h3>
                         <p class="text-white text-sm leading-relaxed">
@@ -852,7 +852,7 @@
 
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/icon16.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
+                    <img src="{{ asset('assets/img/services/icon16.png') }}" alt="Service feature icon" class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">Not Sure</h3>
                         <p class="text-white text-sm leading-relaxed">

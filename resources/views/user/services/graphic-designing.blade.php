@@ -423,15 +423,15 @@
         class="relative py-[200px] px-4 sm:px-6 md:px-12 lg:px-[80px] xl:px-[125px] 2xl:px-[127px] bg-cover bg-center bg-no-repeat"
         style="background-image: url('{{ asset('assets/img/services/uiux.jpg') }}')">
         <div class="mx-auto max-w-7xl flex flex-col items-center text-center md:items-start md:text-left space-y-6">
-            <h2 class="text-4xl sm:text-5xl font-bold">Graphic Designing</h2>
+            <h1 class="text-4xl sm:text-5xl font-bold">{{ $serviceH1 ?? 'Branding & Graphic Design Services for Digital Businesses' }}</h1>
 
             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold w-[480px] text-white" data-wow-delay=".4s">
                 Creative Graphic Design That Brings Your Brand to Life
             </h3>
 
             <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp" data-wow-delay=".4s">
-                Elevate your brand with our professional graphic design services. From logos to marketing collateral,
-                we craft visually compelling designs that capture attention and communicate your message with impact.
+                Build a professional visual identity with strategic logos, social media creatives, campaign graphics,
+                and brand assets designed for digital-first businesses.
             </p>
 
             <a href="{{ route('home') }}#contact"
@@ -849,7 +849,7 @@
                 <!-- Card -->
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/Property 1=Group 36.png') }}" alt="Icon"
+                    <img src="{{ asset('assets/img/services/Property 1=Group 36.png') }}" alt="Service feature icon"
                         class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">
@@ -865,7 +865,7 @@
                 <!-- Card -->
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/Property 1=Group 37.png') }}" alt="Icon"
+                    <img src="{{ asset('assets/img/services/Property 1=Group 37.png') }}" alt="Service feature icon"
                         class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">
@@ -880,7 +880,7 @@
                 <!-- Card -->
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/Property 1=Group 39.png') }}" alt="Icon"
+                    <img src="{{ asset('assets/img/services/Property 1=Group 39.png') }}" alt="Service feature icon"
                         class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">
@@ -896,7 +896,7 @@
                 <!-- Card -->
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/Property 1=Group 38.png') }}" alt="Icon"
+                    <img src="{{ asset('assets/img/services/Property 1=Group 38.png') }}" alt="Service feature icon"
                         class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">
