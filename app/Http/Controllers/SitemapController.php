@@ -12,8 +12,6 @@ class SitemapController extends Controller
     {
         $urls = collect([
             $this->url(route('home'), now(), '1.0', 'weekly'),
-            $this->url(route('about'), now(), '0.7', 'monthly'),
-            $this->url(route('contact'), now(), '0.7', 'monthly'),
             $this->url(route('portfolio'), now(), '0.8', 'monthly'),
             $this->url(route('careers.index'), now(), '0.7', 'weekly'),
             $this->url(route('web-development'), now(), '0.8', 'monthly'),
@@ -23,8 +21,6 @@ class SitemapController extends Controller
             $this->url(route('video-editing'), now(), '0.8', 'monthly'),
             $this->url(route('mobile-app-development'), now(), '0.8', 'monthly'),
             $this->url(route('graphic-designing'), now(), '0.8', 'monthly'),
-            $this->url(route('custom-software-saas'), now(), '0.8', 'monthly'),
-            $this->url(route('ecommerce-development'), now(), '0.8', 'monthly'),
         ]);
 
         Job::open()

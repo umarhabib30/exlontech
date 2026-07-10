@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $title ?? 'Careers | ExlonTech')
+@section('title', $title ?? 'Careers | Exlon Tech')
 
 @push('styles')
     <style>
@@ -151,11 +151,11 @@
     <main class="main-wrapper careers-page">
         <section class="careers-hero">
             <div class="container">
-                <div class="careers-eyebrow">Careers at ExlonTech</div>
-                <h1 class="careers-title">Build digital products for businesses worldwide.</h1>
+                <div class="careers-eyebrow">Careers at Exlon Tech</div>
+                <h1 class="careers-title">Build meaningful digital products with us.</h1>
                 <p class="careers-copy">
-                    Join a Pakistan-based team focused on remote collaboration, web development, mobile apps, design,
-                    marketing, and practical software delivery for growing businesses worldwide.
+                    Join a team focused on web development, mobile apps, design, marketing, and practical software
+                    delivery for growing businesses.
                 </p>
             </div>
         </section>

@@ -7,23 +7,23 @@ class SeoMeta
     public static function make(array $overrides = [], ?string $fallbackTitle = null): array
     {
         $defaults = [
-            'title' => $fallbackTitle ?: 'ExlonTech | Web, Mobile App, SaaS & Digital Marketing Agency',
-            'description' => 'ExlonTech helps startups, SMEs, and global businesses build custom websites, mobile apps, SaaS platforms, ecommerce stores, SEO campaigns, and digital marketing systems.',
-            'keywords' => 'ExlonTech, custom software development company, web development agency for startups, mobile app development company, SaaS development company, Laravel development agency, Flutter app development company, ecommerce development agency, SEO agency for small businesses, remote software development team, software outsourcing company Pakistan',
+            'title' => $fallbackTitle ?: 'Exlon Tech | Web Development, Mobile Apps, Design & Digital Marketing',
+            'description' => 'Exlon Tech builds modern websites, mobile apps, UI/UX design, branding, SEO, digital marketing, and video editing solutions for businesses in Pakistan and worldwide.',
+            'keywords' => 'Exlon Tech, web development, mobile app development, UI UX design, graphic design, digital marketing, SEO services, video editing, Laravel development, software company Pakistan, Sargodha',
             'canonical' => self::currentCanonicalUrl(),
             'image' => self::assetUrl('assets/img/services/web hero.jpg'),
-            'image_alt' => 'ExlonTech digital agency serving global businesses',
+            'image_alt' => 'Exlon Tech digital agency',
             'type' => 'website',
             'robots' => 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
             'googlebot' => 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
-            'site_name' => 'ExlonTech',
+            'site_name' => 'Exlon Tech',
             'twitter_card' => 'summary_large_image',
             'locale' => 'en_US',
             'language' => 'en',
-            'author' => 'ExlonTech',
-            'publisher' => 'ExlonTech',
-            'copyright' => 'ExlonTech',
-            'application_name' => 'ExlonTech',
+            'author' => 'Exlon Tech',
+            'publisher' => 'Exlon Tech',
+            'copyright' => 'Exlon Tech',
+            'application_name' => 'Exlon Tech',
             'theme_color' => '#8750f7',
             'geo_region' => 'PK-PB',
             'geo_placename' => 'Sargodha, Pakistan',
@@ -32,9 +32,6 @@ class SeoMeta
             'address_locality' => 'Sargodha',
             'address_region' => 'Punjab',
             'address_country' => 'PK',
-            'breadcrumbs' => [],
-            'service' => null,
-            'faqs' => [],
             'json_ld_extra' => [],
         ];
 
@@ -57,11 +54,11 @@ class SeoMeta
         return [
             '@context' => 'https://schema.org',
             '@type' => 'Organization',
-            'name' => 'ExlonTech',
+            'name' => 'Exlon Tech',
             'url' => self::siteUrl(),
             'logo' => self::assetUrl('assets/img/logo/logo.png'),
             'image' => $seo['image'],
-            'description' => 'ExlonTech is a Pakistan-based digital solutions company serving global businesses with web development, mobile app development, custom software, ecommerce, SEO, UI/UX design, branding, and digital marketing services.',
+            'description' => $seo['description'],
             'email' => $seo['email'],
             'telephone' => $seo['telephone'],
             'address' => [
@@ -89,69 +86,9 @@ class SeoMeta
             'description' => $seo['description'],
             'publisher' => [
                 '@type' => 'Organization',
-                'name' => 'ExlonTech',
+                'name' => 'Exlon Tech',
             ],
             'inLanguage' => $seo['language'],
-        ];
-    }
-
-    public static function breadcrumbSchema(array $breadcrumbs): ?array
-    {
-        if (count($breadcrumbs) < 2) {
-            return null;
-        }
-
-        return [
-            '@context' => 'https://schema.org',
-            '@type' => 'BreadcrumbList',
-            'itemListElement' => array_values(array_map(
-                fn ($item, $index) => [
-                    '@type' => 'ListItem',
-                    'position' => $index + 1,
-                    'name' => $item['name'],
-                    'item' => self::canonicalUrl($item['url']),
-                ],
-                $breadcrumbs,
-                array_keys($breadcrumbs)
-            )),
-        ];
-    }
-
-    public static function serviceSchema(array $service, array $seo): array
-    {
-        return [
-            '@context' => 'https://schema.org',
-            '@type' => 'Service',
-            'name' => $service['name'],
-            'description' => $service['description'] ?? $seo['description'],
-            'provider' => [
-                '@type' => 'Organization',
-                'name' => 'ExlonTech',
-                'url' => self::siteUrl(),
-            ],
-            'areaServed' => 'Worldwide',
-            'serviceType' => $service['type'] ?? $service['name'],
-            'url' => $seo['canonical'],
-        ];
-    }
-
-    public static function faqSchema(array $faqs): ?array
-    {
-        if ($faqs === []) {
-            return null;
-        }
-
-        return [
-            '@context' => 'https://schema.org',
-            '@type' => 'FAQPage',
-            'mainEntity' => array_map(fn ($faq) => [
-                '@type' => 'Question',
-                'name' => $faq['q'],
-                'acceptedAnswer' => [
-                    '@type' => 'Answer',
-                    'text' => $faq['a'],
-                ],
-            ], $faqs),
         ];
     }
 

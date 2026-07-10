@@ -70,23 +70,30 @@
     <div class="exlon-submit-loader" data-submit-loader aria-hidden="true">
         <div class="exlon-submit-loader__box">
             <span class="exlon-submit-loader__spinner"></span>
+            <span>Submitting...</span>
         </div>
     </div>
 
-    <div class="preloader" aria-hidden="true">
+    <div class="preloader">
         <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
             <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
         </svg>
 
         <div class="preloader-heading">
-            <div class="load-text" aria-hidden="true"></div>
+            <div class="load-text">
+                <span>L</span>
+                <span>o</span>
+                <span>a</span>
+                <span>d</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+            </div>
         </div>
     </div>
 
     <div class="fixed top-[200px] lg:top-[300px] transition-all duration-300 right-[-50px] hover:right-0 z-4xl">
         <button
-            type="button"
-            aria-label="Toggle color theme"
             class="theme-controller w-90px h-10 bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-l-full text-whiteColor px-10px flex items-center transition-all duration-300 font-sora">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-10px w-5 block dark:hidden" viewBox="0 0 512 512">
                 <path
@@ -94,6 +101,8 @@
                     fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                     stroke-width="32"></path>
             </svg>
+            <span class="text-base block dark:hidden">Dark</span>
+
             <svg xmlns="http://www.w3.org/2000/svg" class="hidden mr-10px w-5 dark:block" viewBox="0 0 512 512">
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10"
                     stroke-width="32"
@@ -102,6 +111,7 @@
                 <circle cx="256" cy="256" r="80" fill="none" stroke="currentColor" stroke-linecap="round"
                     stroke-miterlimit="10" stroke-width="32"></circle>
             </svg>
+            <span class="text-base hidden dark:block">Light</span>
         </button>
     </div>
 
@@ -120,9 +130,9 @@
                             <li>
                                 <a href="{{ route('home') }}" class="logo">
                                     <img class="hidden dark:inline-block" style="width: 160px;"
-                                        src="{{ public_asset('assets/img/logo/logo.png') }}" alt="ExlonTech" />
+                                        src="{{ public_asset('assets/img/logo/logo.png') }}" alt="Exlon Tech" />
                                     <img class="inlin-block dark:hidden" style="width: 160px;"
-                                        src="{{ public_asset('assets/img/logo/logo-dark.png') }}" alt="ExlonTech" />
+                                        src="{{ public_asset('assets/img/logo/logo-dark.png') }}" alt="Exlon Tech" />
                                 </a>
                             </li>
                             {{-- <li class="hidden md:block">
@@ -154,9 +164,9 @@
                             <li>
                                 <a href="{{ route('home') }}" class="logo">
                                     <img class="hidden dark:inline-block" style="width: 160px;"
-                                        src="{{ public_asset('assets/img/logo/logo.png') }}" alt="ExlonTech" />
+                                        src="{{ public_asset('assets/img/logo/logo.png') }}" alt="Exlon Tech" />
                                     <img class="inlin-block dark:hidden" style="width: 160px;"
-                                        src="{{ public_asset('assets/img/logo/logo-dark.png') }}" alt="ExlonTech" />
+                                        src="{{ public_asset('assets/img/logo/logo-dark.png') }}" alt="Exlon Tech" />
                                 </a>
                             </li>
                             {{-- <li class="hidden md:block">

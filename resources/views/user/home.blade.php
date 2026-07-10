@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $title ?? 'ExlonTech')
+@section('title', $title ?? 'Exlon Tech')
 
 @push('styles')
     <style>
@@ -88,21 +88,19 @@
                     <div>
                         <h4
                             class="text-seondary-color dark:text-body-color text-size-22 md:text-size-25 lg:text-4xl lg:leading-1.5 font-bold mb-1.5 xl:mb-10px">
-                            Pakistan-based digital solutions company serving global businesses
+                            Welcome to ExlonTech
                         </h4>
                         <h1
                             class="text-size-35 md:text-size-38 lg:text-size-50 xl:text-6xl 2xl:text-size-65 bg-gradient-text-light dark:bg-gradient-text bg-clip-text xl:leading-1.2 text-transparent mb-15px">
-                            Custom Software, Web & Mobile App Development for Businesses Worldwide
+                            Your digital <br />
+                            Partner.
                         </h1>
                         <div class="flex md:hidden justify-center items-center my-30px">
-                            <img src="./assets/img/hero/hero1.png" alt="ExlonTech team building websites, mobile apps, and digital marketing solutions"
+                            <img src="./assets/img/hero/hero1.png" alt="banner image"
                                 class="rounded-38px border-2 border-seondary-color hover:border-primary-color rotate-[4.29deg] hover:rotate-0 transition-all duration-300 max-w-[80%]" />
                         </div>
                         <p class="text-xl leading-1.5 text-primary-color-light dark:text-body-color max-w-540px">
-                            ExlonTech helps startups, SMEs, ecommerce brands, and growing businesses worldwide build scalable websites, mobile apps, SaaS platforms, ecommerce stores, SEO campaigns, and digital growth systems.
-                        </p>
-                        <p class="text-base leading-1.7 text-primary-color-light dark:text-body-color max-w-540px mt-4">
-                            Headquartered in Pakistan and serving clients globally, ExlonTech combines strategy, design, development, and marketing to help businesses launch, scale, and grow online.
+                            ExlonTech provides top-notch software solutions tailored to your needs.
                         </p>
                         <!-- action and social -->
                         <div
@@ -110,9 +108,7 @@
                             <div>
                                 <a href="#contact"
                                     class="text-size-15 font-medium text-primary-color hover:text-body-color capitalize py-17px px-35px bg-200 bg-transparent hover:bg-primary-color rounded-full leading-1 border border-primary-color text-nowrap tracking-1px">Contact
-                                    Us <i class="flaticon-phone-call ml-0.5 text-size-17" aria-hidden="true"></i></a>
-                                <a href="{{ route('portfolio') }}"
-                                    class="ml-2 text-size-15 font-medium text-primary-color hover:text-body-color capitalize py-17px px-35px bg-200 bg-transparent hover:bg-primary-color rounded-full leading-1 border border-primary-color text-nowrap tracking-1px">View Our Work</a>
+                                    Us <i class="flaticon-phone-call ml-0.5 text-size-17"></i></a>
                             </div>
                             <div>
                                 <ul class="flex gap-x-5">
@@ -142,7 +138,7 @@
                     </div>
                     <div
                         class="hidden md:flex md:justify-center md:items-center relative after:absolute after:bottom-0 after:left-0 after:w-220px after:h-220px after:blur-[150px] after:rounded-50% after:bg-gradient-circle after:-z-1 after:-mt-5% after:-mr-5%">
-                        <img src="./assets/img/hero/hero1.png" alt="ExlonTech remote technology team delivering web, app, and software projects"
+                        <img src="./assets/img/hero/hero1.png" alt="banner image"
                             class="rounded-38px border-2 border-seondary-color hover:border-primary-color rotate-[4.29deg] hover:rotate-0 transition-all duration-300" />
                     </div>
                 </div>
@@ -154,7 +150,7 @@
                         <div
                             class="funfact-item flex flex-wrap sm:flex-nowrap flex-col sm:flex-row justify-center lg:justify-start items-center gap-15px">
                             <div class="number text-size-45 md:text-size-55 xl:text-size-64 font-medium">
-                                <span class="odometer !font-sora tracking-[0.04em]" data-count="4">4</span>
+                                <span class="odometer !font-sora tracking-[0.04em]" data-count="4">0</span>
                             </div>
                             <div class="text">Years of <br />Experience</div>
                         </div>
@@ -162,15 +158,15 @@
                         <div
                             class="funfact-item flex flex-wrap sm:flex-nowrap flex-col sm:flex-row justify-center lg:justify-start items-center gap-15px">
                             <div class="number text-size-45 md:text-size-55 xl:text-size-64 font-medium">
-                                <span class="odometer !font-sora tracking-[0.04em]" data-count="40">40</span>+
+                                <span class="odometer !font-sora tracking-[0.04em]" data-count="40">0</span>+
                             </div>
-                            <div class="text">Projects <br />Delivered</div>
+                            <div class="text">Project <br />Completed</div>
                         </div>
 
                         <div
                             class="funfact-item flex flex-wrap sm:flex-nowrap flex-col sm:flex-row justify-center lg:justify-start items-center gap-15px">
                             <div class="number text-size-45 md:text-size-55 xl:text-size-64 font-medium">
-                                <span class="odometer !font-sora tracking-[0.04em]" data-count="100">100</span>+
+                                <span class="odometer !font-sora tracking-[0.04em]" data-count="100">0</span>+
                             </div>
                             <div class="text">Happy <br />Clients</div>
                         </div>
@@ -178,53 +174,11 @@
                         <div
                             class="funfact-item flex flex-wrap sm:flex-nowrap flex-col sm:flex-row justify-center lg:justify-start items-center gap-15px">
                             <div class="number text-size-45 md:text-size-55 xl:text-size-64 font-medium">
-                                <span class="odometer !font-sora tracking-[0.04em]" data-count="10">10</span>+
+                                <span class="odometer !font-sora tracking-[0.04em]" data-count="10">0</span> +
                             </div>
-                            <div class="text">Skilled Team <br />Members</div>
+                            <div class="text">Team <br />Members</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        <section class="bg-cream-light-color dark:bg-black-color py-60px md:py-20">
-            <div class="container">
-                <div class="grid md:grid-cols-2 gap-30px items-start">
-                    <div>
-                        <h2 class="text-3xl md:text-size-35 lg:text-size-40 bg-gradient-text-light dark:bg-gradient-text bg-clip-text text-transparent mb-15px">
-                            Why Global Businesses Choose ExlonTech
-                        </h2>
-                        <p class="text-primary-color-light dark:text-body-color leading-1.8">
-                            ExlonTech works as a remote technology partner for startups, SMEs, ecommerce brands, and
-                            agencies that need clear communication, practical planning, and reliable delivery across
-                            websites, mobile apps, custom software, SEO, and digital marketing.
-                        </p>
-                    </div>
-                    <div class="grid sm:grid-cols-2 gap-15px">
-                        <div class="p-5 rounded-10px bg-white-color dark:bg-seondary-color">
-                            <h3 class="text-xl text-primary-color dark:text-white-color mb-10px">Remote-first collaboration</h3>
-                            <p class="text-primary-color-light dark:text-body-color">Structured updates, defined milestones, and transparent project communication.</p>
-                        </div>
-                        <div class="p-5 rounded-10px bg-white-color dark:bg-seondary-color">
-                            <h3 class="text-xl text-primary-color dark:text-white-color mb-10px">Scalable technology stack</h3>
-                            <p class="text-primary-color-light dark:text-body-color">Laravel, Flutter, ecommerce platforms, APIs, and modern frontend workflows.</p>
-                        </div>
-                        <div class="p-5 rounded-10px bg-white-color dark:bg-seondary-color">
-                            <h3 class="text-xl text-primary-color dark:text-white-color mb-10px">SEO-ready builds</h3>
-                            <p class="text-primary-color-light dark:text-body-color">Clean structure, crawlable content, responsive layouts, metadata, and performance focus.</p>
-                        </div>
-                        <div class="p-5 rounded-10px bg-white-color dark:bg-seondary-color">
-                            <h3 class="text-xl text-primary-color dark:text-white-color mb-10px">Ongoing support</h3>
-                            <p class="text-primary-color-light dark:text-body-color">Flexible maintenance and improvement support for startups and growing teams.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-30px p-5 rounded-10px bg-white-color dark:bg-seondary-color">
-                    <h2 class="text-2xl text-primary-color dark:text-white-color mb-10px">Serving Clients Worldwide</h2>
-                    <p class="text-primary-color-light dark:text-body-color leading-1.8">
-                        ExlonTech works with businesses across different regions through remote collaboration,
-                        structured project management, regular communication, and transparent delivery milestones.
-                    </p>
                 </div>
             </div>
         </section>
@@ -240,9 +194,11 @@
                         </h2>
                         <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp"
                             data-wow-delay=".1s">
-                            ExlonTech builds scalable digital products and growth systems for startups, SMEs,
-                            ecommerce brands, agencies, and global businesses that need a reliable remote technology
-                            partner.
+                            We are a team of passionate and experienced developers, designers, and strategists who are
+                            dedicated to
+                            helping you achieve your goals. We understand that every business is unique, and we take the
+                            time to
+                            understand your needs and create a customized solution that works for you.
                         </p>
                     </div>
                     <!-- services -->
@@ -291,52 +247,12 @@
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
                             data-wow-delay=".25s">
-                            <a href="{{ route('custom-software-saas') }}"
-                                class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
-                                <span
-                                    class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
-                                    <b
-                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">03</b>
-                                    <b class="text-xl md:text-size-25 lg:text-3xl">Custom Software & SaaS</b>
-                                </span>
-
-                                <span
-                                    class="text-primary-color-light dark:text-body-color w-full md:w-[calc(45%-10px)] group-hover:text-white">
-                                    Build SaaS platforms, business dashboards, CRM systems, booking systems, and
-                                    automation tools for growing companies.
-                                </span>
-                                <i
-                                    class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] transition-all duration-300"></i>
-                            </a>
-                        </div>
-                        <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
-                            data-wow-delay=".25s">
-                            <a href="{{ route('ecommerce-development') }}"
-                                class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
-                                <span
-                                    class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
-                                    <b
-                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">04</b>
-                                    <b class="text-xl md:text-size-25 lg:text-3xl">Ecommerce Development</b>
-                                </span>
-
-                                <span
-                                    class="text-primary-color-light dark:text-body-color w-full md:w-[calc(45%-10px)] group-hover:text-white">
-                                    Launch SEO-ready Shopify, WooCommerce, and custom online stores with clear product,
-                                    checkout, and payment flows.
-                                </span>
-                                <i
-                                    class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] transition-all duration-300"></i>
-                            </a>
-                        </div>
-                        <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
-                            data-wow-delay=".25s">
                             <a href="{{ route('ux-ui-design') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
                                     <b
-                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">05</b>
+                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">03</b>
                                     <b class="text-xl md:text-size-25 lg:text-3xl">UX/UI</b>
                                 </span>
 
@@ -356,7 +272,7 @@
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
                                     <b
-                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">06</b>
+                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">04</b>
                                     <b class="text-xl md:text-size-25 lg:text-3xl">Digital Marketing</b>
                                 </span>
 
@@ -377,7 +293,7 @@
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
                                     <b
-                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">07</b>
+                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">05</b>
                                     <b class="text-xl md:text-size-25 lg:text-3xl">Graphic Designing</b>
                                 </span>
 
@@ -393,32 +309,12 @@
                         </div>
                         <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
                             data-wow-delay=".3s">
-                            <a href="{{ route('seo') }}"
-                                class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
-                                <span
-                                    class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
-                                    <b
-                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">08</b>
-                                    <b class="text-xl md:text-size-25 lg:text-3xl">SEO Services</b>
-                                </span>
-
-                                <span
-                                    class="text-primary-color-light dark:text-body-color w-full md:w-[calc(45%-10px)] group-hover:text-white">
-                                    Improve crawlability, technical SEO, keyword targeting, content structure, and
-                                    organic visibility for business websites.
-                                </span>
-                                <i
-                                    class="flaticon-up-right-arrow text-size-15 md:text-xl text-primary-color group-hover:text-white-color absolute top-[20%] lg:top-1/2 right-5 lg:right-[55px] transition-all duration-300"></i>
-                            </a>
-                        </div>
-                        <div class="service-item px-15px lg:px-30px border dark:border-0 dark:border-b border-body-color dark:border-seondary-color relative z-10 group wow fadeInUp"
-                            data-wow-delay=".3s">
                             <a href="{{ route('video-editing') }}"
                                 class="text-primary-color dark:text-white-color flex items-center gap-15px md:gap-5 flex-wrap md:flex-nowrap py-5 lg:py-30px group-hover:text-white">
                                 <span
                                     class="text-xl w-full md:w-[calc(40%-10px)] flex flex-wrap lg:flex-nowrap items-center gap-10px md:gap-5">
                                     <b
-                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">09</b>
+                                        class="service-sl-num text-primary-color group-hover:text-white transition-all duration-300">06</b>
                                     <b class="text-xl md:text-size-25 lg:text-3xl">Video Editing</b>
                                 </span>
 
@@ -658,13 +554,13 @@
                                     <div class="flex justify-between gap-30px mb-5">
                                         <div class="max-w-100px w-full">
                                             <img src="./assets/img/testimonials/logo/white-logo-transparent.svg"
-                                                alt="Quote icon for customer testimonial" class="!hidden dark:!block" />
+                                                alt="" class="!hidden dark:!block" />
                                             <img src="./assets/img/testimonials/logo/main-logo-transparent.svg"
-                                                alt="Quote icon for customer testimonial" class="!block dark:!hidden" />
+                                                alt="" class="!block dark:!hidden" />
                                         </div>
                                         <div class="max-w-120px w-2/5">
                                             <img class="rounded-5px rounded-bl-125px w-full"
-                                                src="./assets/img/testimonials/user/t1.png" alt="Anthony testimonial profile photo" />
+                                                src="./assets/img/testimonials/user/t1.png" alt="" />
                                         </div>
                                     </div>
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
@@ -710,7 +606,7 @@
                                         <h4 class="text-lg mb-2">Anthony</h4>
 
                                         <p class="text-primary-color-light dark:text-body-color text-sm">
-                                            Co-Founder & CEO
+                                            Co Fouder & CEO
                                         </p>
                                     </div>
                                 </div>
@@ -718,14 +614,14 @@
                                     class="p-25px bg-white-color dark:bg-primary-color-light rounded-15px relative z-0 group">
                                     <div class="flex justify-between gap-30px mb-5">
                                         <div class="max-w-100px w-full">
-                                            <img src="./assets/img/testimonials/logo/logo1.svg" alt="Client company logo"
+                                            <img src="./assets/img/testimonials/logo/logo1.svg" alt=""
                                                 class="!hidden dark:!block" />
-                                            <img src="./assets/img/testimonials/logo/logo1.svg" alt="Client company logo"
+                                            <img src="./assets/img/testimonials/logo/logo1.svg" alt=""
                                                 class="!block dark:!hidden" />
                                         </div>
                                         <div class="max-w-120px w-2/5">
                                             <img class="rounded-5px rounded-bl-125px w-full"
-                                                src="./assets/img/testimonials/user/t2.png" alt="Travis Uresk testimonial profile photo" />
+                                                src="./assets/img/testimonials/user/t2.png" alt="" />
                                         </div>
                                     </div>
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
@@ -780,14 +676,14 @@
                                     class="p-25px bg-white-color dark:bg-primary-color-light rounded-15px relative z-0 group">
                                     <div class="flex justify-between gap-30px mb-5">
                                         <div class="max-w-100px w-full">
-                                            <img src="./assets/img/testimonials/logo/sofa.svg" alt="Sofa client logo"
+                                            <img src="./assets/img/testimonials/logo/sofa.svg" alt=""
                                                 class="!hidden dark:!block" />
-                                            <img src="./assets/img/testimonials/logo/sofa.svg" alt="Sofa client logo"
+                                            <img src="./assets/img/testimonials/logo/sofa.svg" alt=""
                                                 class="!block dark:!hidden" />
                                         </div>
                                         <div class="max-w-120px w-2/5">
                                             <img class="rounded-5px rounded-bl-125px w-full"
-                                                src="./assets/img/testimonials/user/t3.png" alt="Aayush Agarwal testimonial profile photo" />
+                                                src="./assets/img/testimonials/user/t3.png" alt="" />
                                         </div>
                                     </div>
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
@@ -842,14 +738,14 @@
                                     class="p-25px bg-white-color dark:bg-primary-color-light rounded-15px relative z-0 group">
                                     <div class="flex justify-between gap-30px mb-5">
                                         <div class="max-w-100px w-full">
-                                            <img src="./assets/img/testimonials/logo/global.png" alt="Global Mind Consultants logo"
+                                            <img src="./assets/img/testimonials/logo/global.png" alt=""
                                                 class="!hidden dark:!block" />
-                                            <img src="./assets/img/testimonials/logo/global.png" alt="Global Mind Consultants logo"
+                                            <img src="./assets/img/testimonials/logo/global.png" alt=""
                                                 class="!block dark:!hidden" />
                                         </div>
                                         <div class="max-w-120px w-2/5">
                                             <img class="rounded-5px rounded-bl-125px w-full"
-                                                src="./assets/img/testimonials/user/t4.png" alt="Usman Arif testimonial profile photo" />
+                                                src="./assets/img/testimonials/user/t4.png" alt="" />
                                         </div>
                                     </div>
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
@@ -903,14 +799,14 @@
                                     class="p-25px bg-white-color dark:bg-primary-color-light rounded-15px relative z-0 group">
                                     <div class="flex justify-between gap-30px mb-5">
                                         <div class="max-w-100px w-full">
-                                            <img src="./assets/img/testimonials/logo/oasipay.jpg" alt="OasiPay client logo"
+                                            <img src="./assets/img/testimonials/logo/oasipay.jpg" alt=""
                                                 class="!hidden dark:!block" />
-                                            <img src="./assets/img/testimonials/logo/oasipay.jpg" alt="OasiPay client logo"
+                                            <img src="./assets/img/testimonials/logo/oasipay.jpg" alt=""
                                                 class="!block dark:!hidden" />
                                         </div>
                                         <div class="max-w-120px w-2/5">
                                             <img class="rounded-5px rounded-bl-125px w-full"
-                                                src="./assets/img/testimonials/user/t5.png" alt="Ahmed testimonial profile photo" />
+                                                src="./assets/img/testimonials/user/t5.png" alt="" />
                                         </div>
                                     </div>
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
@@ -964,14 +860,14 @@
                                     class="p-25px bg-white-color dark:bg-primary-color-light rounded-15px relative z-0 group">
                                     <div class="flex justify-between gap-30px mb-5">
                                         <div class="max-w-100px w-full">
-                                            <img src="./assets/img/testimonials/logo/koi.png" alt="KOI client logo"
+                                            <img src="./assets/img/testimonials/logo/koi.png" alt=""
                                                 class="!hidden dark:!block" />
-                                            <img src="./assets/img/testimonials/logo/koi.png" alt="KOI client logo"
+                                            <img src="./assets/img/testimonials/logo/koi.png" alt=""
                                                 class="!block dark:!hidden" />
                                         </div>
                                         <div class="max-w-120px w-2/5">
                                             <img class="rounded-5px rounded-bl-125px w-full"
-                                                src="./assets/img/testimonials/user/2.jpg" alt="Dr Muhammad Junaid testimonial profile photo" />
+                                                src="./assets/img/testimonials/user/2.jpg" alt="" />
                                         </div>
                                     </div>
                                     <div class="text-primary-color-light dark:text-white-color relative z-10">
@@ -1027,6 +923,141 @@
                 </div>
             </div>
         </section>
+        <!-- blogs area -->
+        {{-- <section>
+            <div id="blogs" class="py-60px md:py-20 lg:py-100px xl:py-30">
+                <div class="container">
+                    <!-- section heading -->
+                    <div class="text-center flex flex-col items-center mb-10 md:mb-50px">
+                        <h2 class="text-3xl md:text-size-35 lg:text-size-40 xl:text-size-45 bg-gradient-text-light dark:bg-gradient-text bg-clip-text xl:leading-1.2 text-transparent mb-15px wow fadeInUp"
+                            data-wow-delay=".05s">
+                            Recent Blogs
+                        </h2>
+                        <p class="text-primary-color-light dark:text-body-color max-w-700px wow fadeInUp"
+                            data-wow-delay=".1s">
+                            We put your ideas and thus your wishes in the form of a unique
+                            web project that inspires you and you customers.
+                        </p>
+                    </div>
+                    <!-- blogs -->
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-25px 2xl:gap-35px">
+                        <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".15s">
+                            <div class="rounded-10px relative overflow-hidden max-w-400 w-full">
+                                <a href="blog-details.html" class="rounded-10px overflow-hidden">
+                                    <img src="./assets/img/blog/1.jpg" alt=""
+                                        class="group-hover:scale-110 transition-all duration-500" /></a>
+                                <a href="#"
+                                    class="text-size-13 uppercase px-10px py-7px rounded-50px leading-1 absolute top-[15px] left-[15px] text-white-color bg-gradient-secondary-2 bg-200 hover:bg-100">Tutorial</a>
+                                <div
+                                    class="absolute left-0 bottom-5 w-full px-10px lg:px-5 transition-all duration-500">
+                                    <div
+                                        class="relative z-0 p-15px pb-5 bg-white-color dark:bg-seondary-color rounded-15px w-full after:absolute after:top-0 after:left-0 after:w-full after:h-full after:opacity-0 group-hover:after:opacity-100 after:transition-all after:duration-500 after:z-1 after:bg-gradient-primary after:rounded-15px">
+                                        <div class="relative z-10">
+                                            <ul class="flex gap-5 items-center mb-2">
+                                                <li
+                                                    class="text-sm font-medium text-primary-color group-hover:text-white-color transition-all duration-500">
+                                                    <i class="fa-light fa-calendar-days mr-0.5"></i> Oct
+                                                    01, 2022
+                                                </li>
+                                                <li class="text-sm font-medium">
+                                                    <i
+                                                        class="fa-light fa-comments mr-0.5 text-primary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                    <a href="#"
+                                                        class="text-primary-color group-hover:text-white-color transition-all duration-500">Comment
+                                                        (0)</a>
+                                                </li>
+                                            </ul>
+                                            <a href="blog-details.html"
+                                                class="text-primary-color-light dark:text-white-color group-hover:text-white-color w-full capitalize">
+                                                <span class="block text-lg md:text-size-22 font-bold">
+                                                    top 10 ui ux designers
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".2s">
+                            <div class="rounded-10px relative overflow-hidden max-w-400 w-full">
+                                <a href="blog-details.html" class="rounded-10px overflow-hidden">
+                                    <img src="./assets/img/blog/2.jpg" alt=""
+                                        class="group-hover:scale-110 transition-all duration-500" /></a>
+                                <a href="#"
+                                    class="text-size-13 uppercase px-10px py-7px rounded-50px leading-1 absolute top-[15px] left-[15px] text-white-color bg-gradient-secondary-2 bg-200 hover:bg-100">TIPS</a>
+                                <div
+                                    class="absolute left-0 bottom-5 w-full px-10px lg:px-5 transition-all duration-500">
+                                    <div
+                                        class="relative z-0 p-15px pb-5 bg-white-color dark:bg-seondary-color rounded-15px w-full after:absolute after:top-0 after:left-0 after:w-full after:h-full after:opacity-0 group-hover:after:opacity-100 after:transition-all after:duration-500 after:z-1 after:bg-gradient-primary after:rounded-15px">
+                                        <div class="relative z-10">
+                                            <ul class="flex gap-5 items-center mb-2">
+                                                <li
+                                                    class="text-sm font-medium text-primary-color group-hover:text-white-color transition-all duration-500">
+                                                    <i class="fa-light fa-calendar-days mr-0.5"></i> Nov
+                                                    01, 2022
+                                                </li>
+                                                <li class="text-sm font-medium">
+                                                    <i
+                                                        class="fa-light fa-comments mr-0.5 text-primary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                    <a href="#"
+                                                        class="text-primary-color group-hover:text-white-color transition-all duration-500">Comment
+                                                        (0)</a>
+                                                </li>
+                                            </ul>
+                                            <a href="blog-details.html"
+                                                class="text-primary-color-light dark:text-white-color group-hover:text-white-color w-full capitalize">
+                                                <span class="block text-lg md:text-size-22 font-bold">
+                                                    App Development Guides
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".25s">
+                            <div class="rounded-10px relative overflow-hidden max-w-400 w-full">
+                                <a href="blog-details.html" class="rounded-10px overflow-hidden">
+                                    <img src="./assets/img/blog/3.jpg" alt=""
+                                        class="group-hover:scale-110 transition-all duration-500" /></a>
+                                <a href="#"
+                                    class="text-size-13 uppercase px-10px py-7px rounded-50px leading-1 absolute top-[15px] left-[15px] text-white-color bg-gradient-secondary-2 bg-200 hover:bg-100">FREEBIES</a>
+                                <div
+                                    class="absolute left-0 bottom-5 w-full px-10px lg:px-5 transition-all duration-500">
+                                    <div
+                                        class="relative z-0 p-15px pb-5 bg-white-color dark:bg-seondary-color rounded-15px w-full after:absolute after:top-0 after:left-0 after:w-full after:h-full after:opacity-0 group-hover:after:opacity-100 after:transition-all after:duration-500 after:z-1 after:bg-gradient-primary after:rounded-15px">
+                                        <div class="relative z-10">
+                                            <ul class="flex gap-5 items-center mb-2">
+                                                <li
+                                                    class="text-sm font-medium text-primary-color group-hover:text-white-color transition-all duration-500">
+                                                    <i class="fa-light fa-calendar-days mr-0.5"></i> Dec
+                                                    01, 2022
+                                                </li>
+                                                <li class="text-sm font-medium">
+                                                    <i
+                                                        class="fa-light fa-comments mr-0.5 text-primary-color group-hover:text-white-color transition-all duration-500"></i>
+                                                    <a href="#"
+                                                        class="text-primary-color group-hover:text-white-color transition-all duration-500">Comment
+                                                        (0)</a>
+                                                </li>
+                                            </ul>
+                                            <a href="blog-details.html"
+                                                class="text-primary-color-light dark:text-white-color group-hover:text-white-color w-full capitalize">
+                                                <span class="block text-lg md:text-size-22 font-bold">
+                                                    learn graphic design free
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> --}}
+
         <!-- contact area -->
         <section id="contact">
             <div class="bg-cream-light-color dark:bg-black-color py-60px md:py-20 lg:py-100px xl:py-30">
@@ -1131,7 +1162,7 @@
                                             <p class="text-primary-color-light dark:text-white-color mb-1">
                                                 Email
                                             </p>
-                                            <a href="mailto:info@exlontech.com"
+                                            <a href="info@exlontech.com"
                                                 class="text-primary-color-light dark:text-white-color text-lg lg:text-xl font-medium hover:text-primary-color">info@exlontech.com</a>
                                         </div>
                                     </li>
@@ -1145,7 +1176,7 @@
                                             <p class="text-primary-color-light dark:text-white-color mb-1">
                                                 Address
                                             </p>
-                                            <a href="https://maps.google.com/?q=Sargodha%2C%20Pakistan" target="_blank" rel="noopener noreferrer"
+                                            <a href="#"
                                                 class="text-primary-color-light dark:text-white-color text-lg lg:text-xl font-medium hover:text-primary-color">
                                                 House # 49-C, Satellite <br />
                                                 Sargodha, Pakistan</a>

@@ -23,18 +23,6 @@ class ServicesMenu
                         'desc' => 'Cross-platform and native apps for iOS and Android',
                         'icon' => 'fa-mobile-screen-button',
                     ],
-                    [
-                        'route' => 'custom-software-saas',
-                        'title' => 'Custom Software & SaaS',
-                        'desc' => 'Business platforms, dashboards, portals, and SaaS products',
-                        'icon' => 'fa-layer-group',
-                    ],
-                    [
-                        'route' => 'ecommerce-development',
-                        'title' => 'Ecommerce Development',
-                        'desc' => 'Shopify, WooCommerce, and custom online stores',
-                        'icon' => 'fa-cart-shopping',
-                    ],
                 ],
             ],
             [

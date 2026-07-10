@@ -8,7 +8,6 @@ use App\Http\Controllers\Admin\JobApplicationController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\PageController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SitemapController;
@@ -17,8 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('sitemap.xml', SitemapController::class)->name('sitemap');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('about', [PageController::class, 'about'])->name('about');
-Route::get('contact', [PageController::class, 'contact'])->name('contact');
 Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio');
 Route::get('careers', [CareerController::class, 'index'])->name('careers.index');
 Route::get('careers/{job}', [CareerController::class, 'show'])->name('careers.show');
@@ -48,6 +45,4 @@ Route::controller(ServiceController::class)->group(function () {
     Route::get('services/video-editing', 'videoEditing')->name('video-editing');
     Route::get('services/mobile-app-development', 'mobileAppDevelopment')->name('mobile-app-development');
     Route::get('services/graphic-designing', 'graphicDesigning')->name('graphic-designing');
-    Route::get('services/custom-software-saas', 'customSoftwareSaas')->name('custom-software-saas');
-    Route::get('services/ecommerce-development', 'ecommerceDevelopment')->name('ecommerce-development');
 });

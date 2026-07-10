@@ -200,7 +200,7 @@
                                     class="portfolio-page__image" />
                             </div>
                             <div class="absolute left-0 bottom-[15px] group-hover:bottom-5 translate-y-5 group-hover:translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible w-full px-15px lg:px-5 transition-all duration-300">
-                                <a href="{{ route('home') }}#contact"
+                                <a href="#"
                                     class="text-white-color p-15px pr-30px lg:p-5 lg:pr-50px bg-gradient-primary rounded-15px w-full">
                                     <span class="block text-xl md:text-size-25 lg:text-3xl font-bold mb-2 lg:mb-15px">
                                         The Genius Arena
@@ -213,63 +213,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="pb-30px md:pb-60px lg:pb-100px">
-            <div class="container">
-                <div class="text-center flex flex-col items-center mb-10 md:mb-50px">
-                    <h2 class="text-3xl md:text-size-35 lg:text-size-40 bg-gradient-text-light dark:bg-gradient-text bg-clip-text text-transparent mb-15px">
-                        Selected Case Studies
-                    </h2>
-                    <p class="text-primary-color-light dark:text-body-color max-w-700px">
-                        A closer look at the type of business problems ExlonTech solves through custom web platforms,
-                        operational systems, branding, and digital product development.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-25px">
-                    <article class="p-25px rounded-10px bg-cream-light-color dark:bg-seondary-color">
-                        <h2 class="text-2xl text-primary-color dark:text-white-color mb-10px">Hotel Booking Management System</h2>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Client Type:</strong> Hospitality business</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Problem:</strong> The client needed a centralized way to manage bookings, rooms, customers, and daily operations.</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Solution:</strong> ExlonTech developed a custom booking management platform with admin dashboard, booking calendar, customer records, room management, and reporting tools.</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Technologies:</strong> Laravel, MySQL, JavaScript, Bootstrap</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Result:</strong> The system helped reduce manual booking work and improve operational control.</p>
-                    </article>
-
-                    <article class="p-25px rounded-10px bg-cream-light-color dark:bg-seondary-color">
-                        <h2 class="text-2xl text-primary-color dark:text-white-color mb-10px">Distribution Inventory & Sales System</h2>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Client Type:</strong> Distribution and operations business</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Problem:</strong> The business needed better visibility into stock, sales activity, customer records, and operational reporting.</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Solution:</strong> ExlonTech created a web-based management system for inventory, sales records, reporting, and admin workflows.</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Technologies:</strong> Laravel, MySQL, JavaScript, Bootstrap</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Result:</strong> The platform improved day-to-day control and reduced reliance on scattered manual records.</p>
-                    </article>
-
-                    <article class="p-25px rounded-10px bg-cream-light-color dark:bg-seondary-color">
-                        <h2 class="text-2xl text-primary-color dark:text-white-color mb-10px">Global Mind Consultants Website</h2>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Client Type:</strong> Professional services firm</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Problem:</strong> The consultancy needed a credible online presence that clearly presented services and encouraged inquiries.</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Solution:</strong> ExlonTech delivered a responsive website with service pages, conversion-focused content structure, and a professional visual experience.</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Result:</strong> The website gives the brand a stronger trust signal for prospective clients.</p>
-                    </article>
-
-                    <article class="p-25px rounded-10px bg-cream-light-color dark:bg-seondary-color">
-                        <h2 class="text-2xl text-primary-color dark:text-white-color mb-10px">Restore Partner Pro Marketplace</h2>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Client Type:</strong> Service marketplace</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Problem:</strong> The business needed a platform to connect restoration companies and plumbers through a clearer digital workflow.</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Solution:</strong> ExlonTech supported a marketplace experience with structured service presentation and user-focused web delivery.</p>
-                        <p class="text-primary-color-light dark:text-body-color"><strong>Result:</strong> The platform presents the service model more clearly for users and partners.</p>
-                    </article>
-                </div>
-
-                <div class="text-center mt-30px">
-                    <a href="{{ route('home') }}#contact"
-                        class="text-size-15 font-medium text-primary-color hover:text-body-color capitalize py-17px px-35px bg-transparent hover:bg-primary-color rounded-full leading-1 border border-primary-color">
-                        Book a free software consultation
-                    </a>
                 </div>
             </div>
         </section>
