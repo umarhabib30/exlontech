@@ -1,4 +1,7 @@
 User-agent: *
-Disallow:
+Allow: /
+
+Disallow: /admin
+Disallow: /admin/*
 
 Sitemap: https://exlontech.com/sitemap.xml
