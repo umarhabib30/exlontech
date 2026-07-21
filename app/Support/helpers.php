@@ -6,6 +6,6 @@ if (! function_exists('public_asset')) {
      */
     function public_asset(string $path): string
     {
-        return '/' . ltrim($path, '/');
+        return asset($path);
     }
 }

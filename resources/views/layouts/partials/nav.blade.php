@@ -59,6 +59,11 @@
     </li>
 
     <li class="nav_item group relative hidden lg:block">
+        <a href="{{ route('about') }}"
+            class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">About Us
+        </a>
+    </li>
+    <li class="nav_item group relative hidden lg:block">
         <a href="{{ route('portfolio') }}"
             class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Portfolio
         </a>
@@ -83,13 +88,13 @@
             class="text-size-15 font-medium text-seondary-color dark:text-white-color capitalize py-10px md:py-15px lg:py-25px 2xl:py-30px relative z-0 after:w-0 after:h-0.5 after:bg-gradient-primary after:absolute after:right-0 hover:after:left-0 after:bottom-[25px] after:transition-all after:duration-500 group-hover:after:w-full">Contact
         </a>
     </li>
-    <li>
+    <li class="hidden lg:block">
         <a href="{{ $home }}#contact"
             class="text-size-15 font-bold text-white-color capitalize py-17px px-35px ml-10px bg-200 bg-gradient-secondary hover:bg-[-100%] rounded-full leading-1 transition-all duration-300">Hire
             Us!</a>
     </li>
-    <li class="menu-bar lg:hidden">
-        <div class="menu-bar">
+    <li class="menu-bar lg:hidden flex items-center justify-center my-auto">
+        <div class="menu-bar flex items-center justify-center">
             <button type="button">
                 <span></span>
                 <span></span>

@@ -17,6 +17,7 @@ Route::get('sitemap.xml', SitemapController::class)->name('sitemap');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio');
+Route::view('about', 'user.about')->name('about');
 Route::get('careers', [CareerController::class, 'index'])->name('careers.index');
 Route::get('careers/{job}', [CareerController::class, 'show'])->name('careers.show');
 Route::post('careers/{job}/apply', [CareerController::class, 'apply'])->name('careers.apply');

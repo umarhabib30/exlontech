@@ -67,6 +67,20 @@ indexing and active link
           });
         });
       }
+
+      // Mobile Services Submenu Accordion Toggle
+      const mobileServicesLabels = document.querySelectorAll(".mobile-services-label");
+      mobileServicesLabels?.forEach((label) => {
+        label.addEventListener("click", function (e) {
+          e.preventDefault();
+          const parentItem = label.closest(".mobile-nav-item");
+          const submenu = parentItem?.querySelector(".mobile-services-submenu");
+          if (submenu) {
+            label.classList.toggle("is-open");
+            submenu.classList.toggle("is-open");
+          }
+        });
+      });
   
       // Sticky Header Js
   

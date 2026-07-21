@@ -63,6 +63,28 @@
                 transform: rotate(360deg);
             }
         }
+
+        /* Mobile Header & Close Cross Icon Vertically Centered */
+        @media (max-width: 1023px) {
+            .header-area .logo img {
+                width: 125px !important;
+            }
+            .header-area .flex.items-center,
+            .header-area nav,
+            .header-area .menu-bar {
+                display: flex !important;
+                align-items: center !important;
+            }
+            .menu-bar button {
+                transform: scale(0.72) !important;
+                transform-origin: center center !important;
+                margin: auto 0 !important;
+            }
+            .menu-bar button.active {
+                transform: scale(0.72) rotate(45deg) !important;
+                transform-origin: center center !important;
+            }
+        }
     </style>
 </head>
 
