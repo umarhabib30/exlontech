@@ -336,7 +336,7 @@
         </section>
 
         <!-- portfolio area -->
-        <section id="portfolio">
+        <section id="portfolio" class="bg-white-color dark:bg-transparent">
             <div class="pt-60px pb-30px md:pt-20 md:pb-60px lg:pt-100px lg:pb-20">
                 <div class="container">
                     <!-- section heading -->
@@ -363,8 +363,8 @@
                                 <div class="gutter-sizer"></div>
 
                                 <div
-                                    class="portfolio-item branding bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                    <img src="{{ asset('assets/img/portfolio_images/p5.jpg') }}"
+                                    class="portfolio-item branding bg-cream-light-color dark:bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
+                                    <img src="{{ public_asset('assets/img/portfolio_images/p5.jpg') }}"
                                         alt="Restore Partner Pro" width="1920" height="1080" loading="lazy"
                                         decoding="async" />
                                     <div
@@ -386,8 +386,8 @@
                                 </div>
 
                                 <div
-                                    class="portfolio-item uxui bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                    <img src="{{ asset('assets/img/portfolio_images/p6.jpg') }}"
+                                    class="portfolio-item uxui bg-cream-light-color dark:bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
+                                    <img src="{{ public_asset('assets/img/portfolio_images/p6.jpg') }}"
                                         alt="Global Mind Consultants" width="1920" height="1080" loading="lazy"
                                         decoding="async" />
                                     <div
@@ -408,8 +408,8 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="portfolio-item uxui bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
-                                    <img src="{{ asset('assets/img/portfolio_images/p8.jpg') }}"
+                                    class="portfolio-item uxui bg-cream-light-color dark:bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left inline-flex">
+                                    <img src="{{ public_asset('assets/img/portfolio_images/p8.jpg') }}"
                                         alt="Chatbot Assistant" width="1920" height="1080" loading="lazy"
                                         decoding="async" />
                                     <div

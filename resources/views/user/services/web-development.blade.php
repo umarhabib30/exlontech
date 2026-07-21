@@ -2,7 +2,7 @@
 
 @include('layouts.partials.service-page-assets')
 
-@section('body_class', 'font-[Sora] text-white bg-[#0F0715]')
+@section('body_class', 'service-page font-sora bg-cream-light-color dark:bg-[#0F0715] text-seondary-color dark:text-white')
 
 @section('title', $title ?? 'Web Development | Exlon Tech')
 

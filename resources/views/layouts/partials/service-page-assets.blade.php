@@ -1,5 +1,6 @@
 @push('styles')
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ public_asset('assets/css/service-pages-theme.css') }}" />
     <style>
         html {
             scrollbar-width: thin;

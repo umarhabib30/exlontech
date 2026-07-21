@@ -5,7 +5,8 @@
         <div class="site-footer__inner">
         <div class="site-footer__brand">
             <a href="{{ route('home') }}" class="site-footer__logo-wrap">
-                <img src="{{ public_asset('assets/img/logo/logo.png') }}" alt="ExlonTech Logo" class="site-footer__logo" />
+                <img src="{{ public_asset('assets/img/logo/logo.png') }}" alt="ExlonTech Logo" class="site-footer__logo site-footer__logo--dark" />
+                <img src="{{ public_asset('assets/img/logo/logo-dark.png') }}" alt="ExlonTech Logo" class="site-footer__logo site-footer__logo--light" />
             </a>
 
             <p class="site-footer__tagline">

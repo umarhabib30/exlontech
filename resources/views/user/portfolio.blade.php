@@ -93,7 +93,7 @@
                         <div class="portfolio-sizer"></div>
                         <div class="gutter-sizer"></div>
 
-                        <div class="portfolio-item branding bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
+                        <div class="portfolio-item branding bg-cream-light-color dark:bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
                                 <img src="{{ asset('assets/img/portfolio_images/p2.jpg') }}" alt="Restore Partner Pro"
                                     width="1920" height="1080" loading="lazy" decoding="async"
@@ -113,7 +113,7 @@
                             </div>
                         </div>
 
-                        <div class="portfolio-item uxui bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
+                        <div class="portfolio-item uxui bg-cream-light-color dark:bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
                                 <img src="{{ asset('assets/img/portfolio_images/p1.jpg') }}" alt="Global Mind Consultants"
                                     width="1920" height="1080" loading="lazy" decoding="async"
@@ -133,7 +133,7 @@
                             </div>
                         </div>
 
-                        <div class="portfolio-item web bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
+                        <div class="portfolio-item web bg-cream-light-color dark:bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
                                 <img src="{{ asset('assets/img/portfolio_images/p5.jpg') }}" alt="Booking Management System"
                                     width="1920" height="1080" loading="lazy" decoding="async"
@@ -153,7 +153,7 @@
                             </div>
                         </div>
 
-                        <div class="portfolio-item web bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
+                        <div class="portfolio-item web bg-cream-light-color dark:bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
                                 <img src="{{ asset('assets/img/portfolio_images/p6.jpg') }}" alt="Disaster Management System"
                                     width="1920" height="1080" loading="lazy" decoding="async"
@@ -173,7 +173,7 @@
                             </div>
                         </div>
 
-                        <div class="portfolio-item mobile-app bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
+                        <div class="portfolio-item mobile-app bg-cream-light-color dark:bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
                                 <img src="{{ asset('assets/img/portfolio_images/p7.jpg') }}" alt="HQA School Management System"
                                     width="1920" height="1080" loading="lazy" decoding="async"
@@ -193,7 +193,7 @@
                             </div>
                         </div>
 
-                        <div class="portfolio-item branding bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
+                        <div class="portfolio-item branding bg-cream-light-color dark:bg-primary-color-light px-15px pt-25px pb-0 lg:p-9 lg:pb-0 rounded-10px group relative float-left">
                             <div class="portfolio-page__media">
                                 <img src="{{ asset('assets/img/portfolio_images/p3.jpg') }}" alt="The Genius Arena"
                                     width="1920" height="1080" loading="lazy" decoding="async"

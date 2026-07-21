@@ -22,6 +22,18 @@
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     @stack('styles')
+    <script>
+        (function () {
+            try {
+                var theme = localStorage.getItem('theme');
+                if (theme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                } else {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) {}
+        })();
+    </script>
     <style>
         .exlon-submit-loader {
             position: fixed;
@@ -88,7 +100,7 @@
     </style>
 </head>
 
-<body class="@yield('body_class', 'font-sora dark:bg-dark-color')">
+<body class="@yield('body_class', 'font-sora bg-cream-light-color dark:bg-dark-color text-seondary-color dark:text-body-color')">
     <div class="exlon-submit-loader" data-submit-loader aria-hidden="true">
         <div class="exlon-submit-loader__box">
             <span class="exlon-submit-loader__spinner"></span>
