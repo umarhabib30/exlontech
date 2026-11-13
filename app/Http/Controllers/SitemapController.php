@@ -61,7 +61,7 @@ class SitemapController extends Controller
         $path = parse_url($loc, PHP_URL_PATH) ?: '/';
 
         return [
-            'loc' => SeoMeta::siteUrl() . ($path === '/' ? '/' : rtrim($path, '/')),
+            'loc' => rtrim(SeoMeta::siteUrl(), '/') . ($path === '/' ? '/' : rtrim($path, '/')),
             'lastmod' => ($lastmod ?? $this->viewModifiedAt($view))->toAtomString(),
             'changefreq' => $changefreq,
             'priority' => $priority,
