@@ -285,6 +285,11 @@
             appearance: none;
         }
 
+        .field select option {
+            color: var(--text);
+            background: var(--panel-2);
+        }
+
         .field input:focus,
         .field select:focus,
         .field textarea:focus {
@@ -614,6 +619,18 @@
                     <a href="{{ route('admin.applications.index') }}" @class(['active' => request()->routeIs('admin.applications.*')])>
                         <i class="fa-solid fa-file-lines"></i>
                         Applications
+                    </a>
+                    <a href="{{ route('admin.fees.index') }}" @class(['active' => request()->routeIs('admin.fees.*')])>
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                        Student Fees
+                    </a>
+                    <a href="{{ route('admin.instructors.index') }}" @class(['active' => request()->routeIs('admin.instructors.*')])>
+                        <i class="fa-solid fa-chalkboard-user"></i>
+                        Instructors
+                    </a>
+                    <a href="{{ route('admin.courses.index') }}" @class(['active' => request()->routeIs('admin.courses.*')])>
+                        <i class="fa-solid fa-book-open"></i>
+                        Courses
                     </a>
                     <a href="{{ route('home') }}" target="_blank" rel="noopener noreferrer">
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>

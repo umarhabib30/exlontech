@@ -5,6 +5,10 @@ use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\ContactSubmissionController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\CourseController;
+use App\Http\Controllers\Admin\FeeController;
+use App\Http\Controllers\Admin\FeeMonthlyPaymentController;
+use App\Http\Controllers\Admin\InstructorController;
 use App\Http\Controllers\Admin\JobApplicationController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\CareerController;
@@ -56,6 +60,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('jobs', JobController::class);
         Route::get('applications/{application}/resume', [JobApplicationController::class, 'downloadResume'])->name('applications.resume');
         Route::resource('applications', JobApplicationController::class)->only(['index', 'show', 'update', 'destroy']);
+        Route::resource('instructors', InstructorController::class)->except(['show']);
+        Route::resource('courses', CourseController::class)->except(['show']);
+        Route::resource('fees', FeeController::class);
+        Route::post('fees/{fee}/months', [FeeMonthlyPaymentController::class, 'store'])->name('fees.months.store');
+        Route::put('fees/{fee}/months/{payment}', [FeeMonthlyPaymentController::class, 'update'])->name('fees.months.update');
+        Route::delete('fees/{fee}/months/{payment}', [FeeMonthlyPaymentController::class, 'destroy'])->name('fees.months.destroy');
     });
 });
 
