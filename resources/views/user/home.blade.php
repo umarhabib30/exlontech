@@ -86,21 +86,20 @@
             <div class="container">
                 <div class="hidded md:grid md:grid-cols-2 md:items-center gap-30px">
                     <div>
-                        <h4
+                        <p
                             class="text-seondary-color dark:text-body-color text-size-22 md:text-size-25 lg:text-4xl lg:leading-1.5 font-bold mb-1.5 xl:mb-10px">
-                            Welcome to ExlonTech
-                        </h4>
+                            Welcome to Exlon Tech
+                        </p>
                         <h1
                             class="text-size-35 md:text-size-38 lg:text-size-50 xl:text-6xl 2xl:text-size-65 bg-gradient-text-light dark:bg-gradient-text bg-clip-text xl:leading-1.2 text-transparent mb-15px">
-                            Your digital <br />
-                            Partner.
+                            Web, apps &amp; digital growth.
                         </h1>
                         <div class="flex md:hidden justify-center items-center my-30px">
-                            <img src="./assets/img/hero/hero1.png" alt="banner image"
+                            <img src="./assets/img/hero/hero1.png" alt="Exlon Tech web and app development team"
                                 class="rounded-38px border-2 border-seondary-color hover:border-primary-color rotate-[4.29deg] hover:rotate-0 transition-all duration-300 max-w-[80%]" />
                         </div>
                         <p class="text-xl leading-1.5 text-primary-color-light dark:text-body-color max-w-540px">
-                            ExlonTech provides top-notch software solutions tailored to your needs.
+                            Exlon Tech is a Sargodha software company that builds custom websites, mobile apps, UI/UX, branding, SEO, and marketing for businesses in Pakistan and worldwide.
                         </p>
                         <!-- action and social -->
                         <div
@@ -944,7 +943,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-25px 2xl:gap-35px">
                         <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".15s">
                             <div class="rounded-10px relative overflow-hidden max-w-400 w-full">
-                                <a href="blog-details.html" class="rounded-10px overflow-hidden">
+                                <a href="#" class="rounded-10px overflow-hidden">
                                     <img src="./assets/img/blog/1.jpg" alt=""
                                         class="group-hover:scale-110 transition-all duration-500" /></a>
                                 <a href="#"
@@ -968,7 +967,7 @@
                                                         (0)</a>
                                                 </li>
                                             </ul>
-                                            <a href="blog-details.html"
+                                            <a href="#"
                                                 class="text-primary-color-light dark:text-white-color group-hover:text-white-color w-full capitalize">
                                                 <span class="block text-lg md:text-size-22 font-bold">
                                                     top 10 ui ux designers
@@ -981,7 +980,7 @@
                         </div>
                         <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".2s">
                             <div class="rounded-10px relative overflow-hidden max-w-400 w-full">
-                                <a href="blog-details.html" class="rounded-10px overflow-hidden">
+                                <a href="#" class="rounded-10px overflow-hidden">
                                     <img src="./assets/img/blog/2.jpg" alt=""
                                         class="group-hover:scale-110 transition-all duration-500" /></a>
                                 <a href="#"
@@ -1005,7 +1004,7 @@
                                                         (0)</a>
                                                 </li>
                                             </ul>
-                                            <a href="blog-details.html"
+                                            <a href="#"
                                                 class="text-primary-color-light dark:text-white-color group-hover:text-white-color w-full capitalize">
                                                 <span class="block text-lg md:text-size-22 font-bold">
                                                     App Development Guides
@@ -1018,7 +1017,7 @@
                         </div>
                         <div class="group relative flex flex-col items-center wow fadeInUp" data-wow-delay=".25s">
                             <div class="rounded-10px relative overflow-hidden max-w-400 w-full">
-                                <a href="blog-details.html" class="rounded-10px overflow-hidden">
+                                <a href="#" class="rounded-10px overflow-hidden">
                                     <img src="./assets/img/blog/3.jpg" alt=""
                                         class="group-hover:scale-110 transition-all duration-500" /></a>
                                 <a href="#"
@@ -1042,7 +1041,7 @@
                                                         (0)</a>
                                                 </li>
                                             </ul>
-                                            <a href="blog-details.html"
+                                            <a href="#"
                                                 class="text-primary-color-light dark:text-white-color group-hover:text-white-color w-full capitalize">
                                                 <span class="block text-lg md:text-size-22 font-bold">
                                                     learn graphic design free
@@ -1162,7 +1161,7 @@
                                             <p class="text-primary-color-light dark:text-white-color mb-1">
                                                 Email
                                             </p>
-                                            <a href="info@exlontech.com"
+                                            <a href="mailto:info@exlontech.com"
                                                 class="text-primary-color-light dark:text-white-color text-lg lg:text-xl font-medium hover:text-primary-color">info@exlontech.com</a>
                                         </div>
                                     </li>

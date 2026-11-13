@@ -417,7 +417,7 @@
         class="relative py-[200px] px-4 sm:px-6 md:px-12 lg:px-[80px] xl:px-[125px] 2xl:px-[127px] bg-cover bg-center bg-no-repeat"
         style="background-image: url('{{ asset('assets/img/services/uiux.jpg') }}')">
         <div class="mx-auto max-w-7xl flex flex-col items-center text-center md:items-start md:text-left space-y-6">
-            <h2 class="text-4xl sm:text-5xl font-bold">UI/UX Design</h2>
+            <h1 class="text-4xl sm:text-5xl font-bold">UI/UX Design</h1>
 
             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold w-[480px] text-white" data-wow-delay=".4s">
                 Helping Businesses and Learners Grow — Together
@@ -607,7 +607,7 @@
 
                 <div class="relative pl-6 border-l border-[#492a85]">
                     <div class="flex flex-col space-y-4">
-                        <img src="{{ asset('assets/img/services/icon9.png') }}" alt="Step 2 Icon" class="w-10 h-10 mt-1" />
+                        <img src="{{ asset('assets/img/services/Icon9.png') }}" alt="Step 2 Icon" class="w-10 h-10 mt-1" />
                         <div class="space-y-2">
                             <h3 class="text-lg font-semibold text-[#A5A5A5]">Step 2</h3>
                             <h4 class="text-xl font-bold">Structure & Wireframes</h4>
@@ -621,7 +621,7 @@
 
                 <div class="relative pl-6 border-l border-[#492a85]">
                     <div class="flex flex-col space-y-4">
-                        <img src="{{ asset('assets/img/services/icon10.png') }}" alt="Step 3 Icon" class="w-10 h-10 mt-1" />
+                        <img src="{{ asset('assets/img/services/Icon10.png') }}" alt="Step 3 Icon" class="w-10 h-10 mt-1" />
                         <div class="space-y-2">
                             <h3 class="text-lg font-semibold text-[#A5A5A5]">Step 3</h3>
                             <h4 class="text-xl font-bold">Design & Testing</h4>
@@ -819,7 +819,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-12">
                 <div
                     class="bg-[#0F0715] border border-[#2d1a4d] p-6 rounded-xl shadow-md hover:shadow-2xl hover:bg-[#120a1c] hover:border-[#492a85] transform hover:-translate-y-1 transition-all duration-300 flex items-center gap-4 min-h-[150px]">
-                    <img src="{{ asset('assets/img/services/icon13.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
+                    <img src="{{ asset('assets/img/services/Icon13.png') }}" alt="Icon" class="w-12 h-12 object-contain flex-shrink-0" />
                     <div class="flex flex-col justify-center">
                         <h3 class="text-lg font-semibold text-[#a182e1] mb-2">Project Based</h3>
                         <p class="text-white text-sm leading-relaxed">
@@ -910,7 +910,7 @@
 
     <!------------------------------------------------- FAQ Section ------------------------------------------>
     @php
-        $faqs = [
+        $faqs = $faqs ?? [
             [
                 'q' => 'Can I see your designers\' portfolio?',
                 'a' => 'Yes, we proudly showcase our designers\' portfolios. You can review their previous work to assess skills, style, and expertise. Contact us and we\'ll share relevant case studies.',

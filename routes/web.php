@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactUsController;
 use App\Http\Controllers\Admin\AuthController as AdminAuthController;
 use App\Http\Controllers\Admin\ContactSubmissionController;
@@ -8,16 +9,36 @@ use App\Http\Controllers\Admin\JobApplicationController;
 use App\Http\Controllers\Admin\JobController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LlmsTxtController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SitemapController;
+use App\Support\SeoMeta;
 use Illuminate\Support\Facades\Route;
 
 Route::get('sitemap.xml', SitemapController::class)->name('sitemap');
+Route::get('llms.txt', [LlmsTxtController::class, 'index'])->name('llms');
+Route::get('llms-full.txt', [LlmsTxtController::class, 'full'])->name('llms.full');
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('portfolio', [PortfolioController::class, 'index'])->name('portfolio');
-Route::view('about', 'user.about')->name('about');
+Route::get('about', [AboutController::class, 'index'])->name('about');
+Route::get('privacy-policy', function () {
+    $canonical = route('privacy');
+
+    return view('user.privacy', [
+        'title' => 'Privacy Policy | Exlon Tech',
+        'meta' => [
+            'title' => 'Privacy Policy | Exlon Tech',
+            'description' => 'How Exlon Tech collects, uses, and protects personal information from website visitors, clients, and job applicants.',
+            'keywords' => 'Exlon Tech privacy policy, data protection, personal information',
+            'canonical' => $canonical,
+            'robots' => 'index, follow',
+            'page_type' => 'WebPage',
+            'breadcrumbs' => SeoMeta::breadcrumbsFor('Privacy Policy', $canonical),
+        ],
+    ]);
+})->name('privacy');
 Route::get('careers', [CareerController::class, 'index'])->name('careers.index');
 Route::get('careers/{job}', [CareerController::class, 'show'])->name('careers.show');
 Route::post('careers/{job}/apply', [CareerController::class, 'apply'])->name('careers.apply');

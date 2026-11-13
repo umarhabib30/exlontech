@@ -423,7 +423,7 @@
         class="relative py-[200px] px-4 sm:px-6 md:px-12 lg:px-[80px] xl:px-[125px] 2xl:px-[127px] bg-cover bg-center bg-no-repeat"
         style="background-image: url('{{ asset('assets/img/services/web hero.jpg') }}')">
         <div class="mx-auto max-w-7xl flex flex-col items-center text-center md:items-start md:text-left space-y-6">
-            <h2 class="text-4xl sm:text-5xl font-bold">Mobile App Development</h2>
+            <h1 class="text-4xl sm:text-5xl font-bold">Mobile App Development</h1>
 
             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold w-[480px] text-white" data-wow-delay=".4s">
                 Custom Mobile Apps Built for Growth and Engagement
@@ -964,7 +964,7 @@
 
     <!------------------------------------------------- FAQ Section ------------------------------------------>
     @php
-        $faqs = [
+        $faqs = $faqs ?? [
             [
                 'q' => 'How long does it take to build a mobile app?',
                 'a' => 'Timeline depends on scope. A simple MVP usually takes 8–12 weeks, while complex apps with custom backends may take 16–24 weeks. We share a clear timeline after discovery.',

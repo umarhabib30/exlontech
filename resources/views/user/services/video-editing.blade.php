@@ -375,7 +375,7 @@
         class="relative py-[200px] px-4 sm:px-6 md:px-12 lg:px-[80px] xl:px-[125px] 2xl:px-[127px] bg-cover bg-center bg-no-repeat"
         style="background-image: url('{{ asset('assets/img/services/videobg.jpg') }}')">
         <div class="mx-auto max-w-7xl flex flex-col items-center text-center md:items-start md:text-left space-y-6">
-            <h2 class="text-4xl sm:text-5xl font-bold">Video Editing</h2>
+            <h1 class="text-4xl sm:text-5xl font-bold">Video Editing</h1>
 
             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold w-[480px] text-white" data-wow-delay=".4s">
                 Professional Video Editing Crafted Around Your Story
@@ -861,7 +861,7 @@
 
     <!------------------------------------------------- FAQ Section ------------------------------------------>
     @php
-        $faqs = [
+        $faqs = $faqs ?? [
             [
                 'q' => 'Can I see samples of your video editing work?',
                 'a' => 'Yes. We share a portfolio of past projects including promos, social content, and long-form edits. Contact us and we will send relevant samples for your industry.',

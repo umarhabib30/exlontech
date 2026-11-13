@@ -13,7 +13,7 @@
                 Turning Ideas into Digital Reality.
             </p>
 
-            <a href="#" class="site-footer__legal-link">Privacy Policy</a>
+            <a href="{{ route('privacy') }}" class="site-footer__legal-link">Privacy Policy</a>
 
             <ul class="site-footer__socials">
                 <li>

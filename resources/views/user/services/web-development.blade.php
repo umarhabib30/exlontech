@@ -423,7 +423,7 @@
         class="relative py-[200px] px-4 sm:px-6 md:px-12 lg:px-[80px] xl:px-[125px] 2xl:px-[127px] bg-cover bg-center bg-no-repeat"
         style="background-image: url('{{ asset('assets/img/services/web hero.jpg') }}')">
         <div class="mx-auto max-w-7xl flex flex-col items-center text-center md:items-start md:text-left space-y-6">
-            <h2 class="text-4xl sm:text-5xl font-bold">Web Development</h2>
+            <h1 class="text-4xl sm:text-5xl font-bold">Web Development</h1>
 
             <h3 class="text-lg sm:text-xl md:text-2xl font-semibold w-[480px] text-white" data-wow-delay=".4s">
                 Modern Web Development Designed Around Your Goals
@@ -973,7 +973,7 @@
 
     <!------------------------------------------------- FAQ Section ------------------------------------------>
     @php
-        $faqs = [
+        $faqs = $faqs ?? [
             [
                 'q' => 'How long does a typical website project take?',
                 'a' => 'Timeline depends on scope. A business website usually takes 4–8 weeks, while complex web apps may take 10–16 weeks. We share a clear timeline after discovery.',

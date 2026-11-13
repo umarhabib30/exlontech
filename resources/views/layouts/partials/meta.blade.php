@@ -1,14 +1,10 @@
 @php
     $seo = \App\Support\SeoMeta::make($meta ?? [], $title ?? null);
-
-    $structuredData = array_merge(
-        [
-            \App\Support\SeoMeta::organizationSchema($seo),
-            \App\Support\SeoMeta::websiteSchema($seo),
-            \App\Support\SeoMeta::webPageSchema($seo),
-        ],
-        $seo['json_ld_extra'] ?? []
-    );
+    $structuredData = \App\Support\SeoMeta::graphs($seo);
+    $llmsUrl = rtrim(\App\Support\SeoMeta::siteUrl(), '/') . '/llms.txt';
+    $imageType = str_ends_with(strtolower(parse_url($seo['image'], PHP_URL_PATH) ?: $seo['image']), '.png')
+        ? 'image/png'
+        : 'image/jpeg';
 @endphp
 
 <meta charset="UTF-8" />
@@ -30,10 +26,17 @@
 <meta name="referrer" content="strict-origin-when-cross-origin" />
 <meta name="geo.region" content="{{ $seo['geo_region'] }}" />
 <meta name="geo.placename" content="{{ $seo['geo_placename'] }}" />
+<meta name="geo.position" content="{{ $seo['geo_position'] }}" />
+<meta name="ICBM" content="{{ $seo['icbm'] }}" />
 
 <link rel="canonical" href="{{ $seo['canonical'] }}" />
+<link rel="alternate" type="text/plain" title="LLM information" href="{{ $llmsUrl }}" />
 <link rel="icon" type="image/x-icon" href="{{ public_asset('assets/favicon.ico') }}" />
 <link rel="apple-touch-icon" href="{{ public_asset('assets/img/logo/logo.png') }}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
 
 <meta property="og:type" content="{{ $seo['type'] }}" />
 <meta property="og:locale" content="{{ $seo['locale'] }}" />
@@ -44,6 +47,9 @@
 <meta property="og:image" content="{{ $seo['image'] }}" />
 <meta property="og:image:secure_url" content="{{ $seo['image'] }}" />
 <meta property="og:image:alt" content="{{ $seo['image_alt'] }}" />
+<meta property="og:image:type" content="{{ $imageType }}" />
+<meta property="og:image:width" content="{{ $seo['image_width'] }}" />
+<meta property="og:image:height" content="{{ $seo['image_height'] }}" />
 
 <meta name="twitter:card" content="{{ $seo['twitter_card'] }}" />
 <meta name="twitter:title" content="{{ $seo['title'] }}" />

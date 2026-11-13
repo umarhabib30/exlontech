@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\JobApplicationMail;
 use App\Models\Job;
 use App\Models\JobApplication;
+use App\Support\SeoMeta;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -17,16 +18,20 @@ class CareerController extends Controller
 {
     public function index(): View
     {
+        $canonical = route('careers.index');
+
         return view('user.careers.index', [
             'title' => 'Careers | Exlon Tech',
             'jobs' => Job::open()->latest()->get(),
             'meta' => [
-                'title' => 'Careers | Exlon Tech Jobs & Opportunities',
-                'description' => 'Explore careers at Exlon Tech and apply for openings in web development, mobile app development, UI/UX design, digital marketing, SEO, and creative services.',
-                'keywords' => 'Exlon Tech careers, software jobs Pakistan, web developer jobs, app developer jobs, UI UX jobs, digital marketing jobs, SEO jobs, graphic design jobs',
-                'canonical' => route('careers.index'),
+                'title' => 'Careers | Exlon Tech Jobs in Web, Apps & Design',
+                'description' => 'Join Exlon Tech in Sargodha. Open roles in web development, mobile apps, UI/UX, digital marketing, SEO, and creative production.',
+                'keywords' => 'Exlon Tech careers, software jobs Pakistan, web developer jobs Sargodha, app developer jobs, UI UX jobs, digital marketing jobs, SEO jobs',
+                'canonical' => $canonical,
                 'image' => 'assets/img/logo/logo.png',
                 'image_alt' => 'Careers at Exlon Tech',
+                'page_type' => 'CollectionPage',
+                'breadcrumbs' => SeoMeta::breadcrumbsFor('Careers', $canonical),
             ],
         ]);
     }
@@ -34,6 +39,54 @@ class CareerController extends Controller
     public function show(Job $job): View
     {
         abort_unless($job->is_active, 404);
+
+        $canonical = route('careers.show', $job);
+        $location = $job->location ?: 'Sargodha';
+        $isRemote = str_contains(strtolower($location), 'remote');
+
+        $jobPosting = [
+            '@context' => 'https://schema.org',
+            '@type' => 'JobPosting',
+            'title' => $job->title,
+            'description' => Str::limit(strip_tags($job->description), 5000),
+            'identifier' => [
+                '@type' => 'PropertyValue',
+                'name' => 'Exlon Tech',
+                'value' => (string) $job->id,
+            ],
+            'datePosted' => optional($job->created_at)?->toAtomString(),
+            'employmentType' => $this->employmentType($job->type),
+            'hiringOrganization' => [
+                '@id' => SeoMeta::siteUrl() . '/#organization',
+                '@type' => 'Organization',
+                'name' => 'Exlon Tech',
+                'sameAs' => SeoMeta::siteUrl(),
+                'logo' => SeoMeta::assetUrl('assets/img/logo/logo.png'),
+            ],
+            'jobLocation' => [
+                '@type' => 'Place',
+                'address' => [
+                    '@type' => 'PostalAddress',
+                    'addressLocality' => $isRemote ? 'Sargodha' : $location,
+                    'addressRegion' => 'Punjab',
+                    'addressCountry' => 'PK',
+                ],
+            ],
+            'applicantLocationRequirements' => [
+                '@type' => 'Country',
+                'name' => 'Pakistan',
+            ],
+            'directApply' => true,
+            'url' => $canonical,
+        ];
+
+        if ($job->deadline) {
+            $jobPosting['validThrough'] = $job->deadline->endOfDay()->toAtomString();
+        }
+
+        if ($isRemote) {
+            $jobPosting['jobLocationType'] = 'TELECOMMUTE';
+        }
 
         return view('user.careers.show', [
             'title' => $job->title . ' | Careers | Exlon Tech',
@@ -50,38 +103,15 @@ class CareerController extends Controller
                     'software jobs Pakistan',
                     'digital agency jobs',
                 ])),
-                'canonical' => route('careers.show', $job),
+                'canonical' => $canonical,
                 'image' => 'assets/img/logo/logo.png',
                 'image_alt' => $job->title . ' at Exlon Tech',
                 'type' => 'article',
-                'json_ld_extra' => [[
-                    '@context' => 'https://schema.org',
-                    '@type' => 'JobPosting',
-                    'title' => $job->title,
-                    'description' => Str::limit(strip_tags($job->description), 5000),
-                    'datePosted' => optional($job->created_at)->toAtomString(),
-                    'employmentType' => strtoupper(str_replace(' ', '_', $job->type ?? 'FULL_TIME')),
-                    'hiringOrganization' => [
-                        '@type' => 'Organization',
-                        'name' => 'Exlon Tech',
-                        'sameAs' => route('home'),
-                        'logo' => \App\Support\SeoMeta::assetUrl('assets/img/logo/logo.png'),
-                    ],
-                    'jobLocation' => [
-                        '@type' => 'Place',
-                        'address' => [
-                            '@type' => 'PostalAddress',
-                            'addressLocality' => $job->location ?: 'Sargodha',
-                            'addressCountry' => 'PK',
-                        ],
-                    ],
-                    'applicantLocationRequirements' => [
-                        '@type' => 'Country',
-                        'name' => 'Pakistan',
-                    ],
-                    'directApply' => true,
-                    'url' => route('careers.show', $job),
-                ]],
+                'page_type' => 'WebPage',
+                'breadcrumbs' => SeoMeta::breadcrumbsFor($job->title, $canonical, [
+                    ['name' => 'Careers', 'url' => route('careers.index')],
+                ]),
+                'json_ld_extra' => [$jobPosting],
             ],
         ]);
     }
@@ -139,5 +169,19 @@ class CareerController extends Controller
         return redirect()
             ->route('careers.show', $job)
             ->with('success', 'Your application has been submitted successfully.');
+    }
+
+    private function employmentType(?string $type): string
+    {
+        $normalized = strtoupper(str_replace([' ', '-'], '_', trim((string) $type)));
+
+        return match ($normalized) {
+            'FULL_TIME', 'FULLTIME' => 'FULL_TIME',
+            'PART_TIME', 'PARTTIME' => 'PART_TIME',
+            'CONTRACT', 'CONTRACTOR' => 'CONTRACTOR',
+            'TEMPORARY' => 'TEMPORARY',
+            'INTERN', 'INTERNSHIP' => 'INTERN',
+            default => 'FULL_TIME',
+        };
     }
 }

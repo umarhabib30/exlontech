@@ -678,7 +678,7 @@
                     <h1 class="hero-title">About Us</h1>
                     <h2 class="hero-subtitle">Helping Businesses and Learners Grow — Together</h2>
                     <p class="hero-paragraph">
-                        Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                        Exlon Tech is a digital agency in Sargodha, Pakistan. We build websites, mobile apps, UI/UX, branding, SEO, digital marketing, and video for businesses that want to grow online.
                     </p>
                     <a href="#learn-more" class="btn-outline">Learn More</a>
                 </div>

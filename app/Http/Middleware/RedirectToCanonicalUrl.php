@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Support\SeoMeta;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,22 +15,16 @@ class RedirectToCanonicalUrl
             return $next($request);
         }
 
-        $path = $request->getPathInfo();
+        $host = $this->canonicalHost($request);
+        $path = $this->canonicalPath($request);
 
-        // Only normalize a trailing slash on non-root paths. Everything else
-        // (scheme/host) is left to the web server / APP_URL so we never fight
-        // a reverse proxy and cause a redirect loop.
-        if ($path === '/' || ! str_ends_with($path, '/')) {
+        if ($host === null && $path === null) {
             return $next($request);
         }
 
-        $normalizedPath = rtrim($path, '/');
-
-        if ($normalizedPath === '') {
-            return $next($request);
-        }
-
-        $target = $request->getSchemeAndHttpHost() . $normalizedPath;
+        $target = $request->getScheme() . '://'
+            . ($host ?? $request->getHttpHost())
+            . ($path ?? $request->getPathInfo());
 
         if ($query = $request->getQueryString()) {
             $target .= '?' . $query;
@@ -40,5 +35,50 @@ class RedirectToCanonicalUrl
         }
 
         return redirect()->to($target, 301);
+    }
+
+    /**
+     * Serving the same page on www and non-www makes every page look like
+     * duplicate content to crawlers, so collapse onto the configured host.
+     * Only the www/non-www pair is redirected; any other host (local domains,
+     * preview subdomains, a reverse proxy) is left alone to avoid loops.
+     */
+    private function canonicalHost(Request $request): ?string
+    {
+        $canonical = parse_url(SeoMeta::siteUrl(), PHP_URL_HOST);
+
+        if (! $canonical) {
+            return null;
+        }
+
+        $current = strtolower($request->getHost());
+
+        if ($current === $canonical) {
+            return null;
+        }
+
+        $isWwwVariant = $current === 'www.' . $canonical || 'www.' . $current === $canonical;
+
+        if (! $isWwwVariant) {
+            return null;
+        }
+
+        $port = $request->getPort();
+        $isDefaultPort = in_array([$request->getScheme(), $port], [['http', 80], ['https', 443]], true);
+
+        return $canonical . ($isDefaultPort || ! $port ? '' : ':' . $port);
+    }
+
+    private function canonicalPath(Request $request): ?string
+    {
+        $path = $request->getPathInfo();
+
+        if ($path === '/' || ! str_ends_with($path, '/')) {
+            return null;
+        }
+
+        $normalized = rtrim($path, '/');
+
+        return $normalized === '' ? null : $normalized;
     }
 }
